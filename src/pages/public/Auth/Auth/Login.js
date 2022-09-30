@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {Button, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '/Users/thomasduckworth/Desktop/DogSports/client/src/hooks/useAuth.js'
 import axios from '../../../../api/axios';
 
@@ -8,18 +8,28 @@ const Login = () => {
 
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const { setAuth } = useAuth();
+  const { setAuth, auth } = useAuth();
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     const registerUser = async () => {
-      const response = await axios.post('/AuthHandler/login', { userName, password});
-        console.log(response.data);
-          setAuth(response.data)
+
+      try {
+        const response = await axios.post('/AuthHandler/login', { userName, password});
+        setAuth(response.data);
+        navigate('/');
+
+      } catch (err) {
+          setErrorMsg(err.response.data);
+          alert(err.response.data);
+      }      
   }
-  registerUser();
+    registerUser();
+    setErrorMsg('');
 }
 
   return (

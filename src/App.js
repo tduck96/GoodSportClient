@@ -16,6 +16,7 @@ import Club from './pages/private/Clubs/Club';
 import Home from './pages/public/Home';
 import Unauthorized from './pages/public/Unauthorized';
 import NotFound from './pages/public/NotFound';
+import RequireAuth from './components/RequireAuth';
 
 
 
@@ -28,23 +29,25 @@ function App() {
     <Routes>
      <Route path = '/' element = {<Layout />} >
       
-      <Route path = '/' element = {<Home />} />
-      <Route path = '/login' element = {<Login />} />
-      <Route path = '/register' element = {<Register />} />
-      <Route path = '/unauthorized' element = {<Unauthorized />} />
-      <Route path = '/404NotFound' element = {<NotFound />} />
+        <Route path = '/' element = {<Home />} />
+        <Route path = '/login' element = {<Login />} />
+        <Route path = '/register' element = {<Register />} />
+        <Route path = '/unauthorized' element = {<Unauthorized />} />
+        <Route path = '/404NotFound' element = {<NotFound />} />
+      
+      <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
+        <Route path = '/user:id' element = {<UserProfile />} />
+        <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
 
-      <Route path = '/user:id' element = {<UserProfile />} />
-      <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
+        <Route path = '/dogs' element = {<Dogs  />} />
+        <Route path = '/dogs:id' element = {<Dog/> } />
 
-      <Route path = '/dogs' element = {<Dogs  />} />
-      <Route path = '/dogs:id' element = {<Dog/> } />
+        <Route path = '/handlers' element = {<Handlers  />} />
+        <Route path = '/handlers/:id' element = {<Handler/> } />
 
-      <Route path = '/handlers' element = {<Handlers  />} />
-      <Route path = '/handers/:id' element = {<Handler/> } />
-
-      <Route path = '/clubs' element = {<Clubs  />} />
-      <Route path = '/clubs/:id' element = {<Club/> } />
+        <Route path = '/clubs' element = {<Clubs  />} />
+        <Route path = '/clubs/:id' element = {<Club/> } />
+      </Route>
       </Route>
         
 
