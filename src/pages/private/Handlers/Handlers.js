@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-import axios from '../../api/axios';
+import axios from '../../../api/axios';
+import Locations from '../Filters/Locations';
 const Handlers = () => {
   const [handlers, setHandlers] = useState([]);
 
@@ -10,9 +11,9 @@ const Handlers = () => {
 
   const getHandlers = async () => {
     try {
-    const response = await axios.get('/handler');
-    setHandlers(response.data);
-  }
+      const response = await axios.get('/handler');
+      setHandlers(response.data);
+   }
     catch (err) {
       console.error(err);
     }
@@ -21,6 +22,7 @@ const Handlers = () => {
 
   return (
     <div>
+      
       {
         handlers.map(handler => (
           <Link to = {`/handlers/${handler.id}`}>

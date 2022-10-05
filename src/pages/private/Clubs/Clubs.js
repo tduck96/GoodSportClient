@@ -25,11 +25,21 @@ const Clubs = () => {
 
   return (
     <div>      
+      <div>
+        <h1> By Sport:</h1> 
+      </div>
+
+
+
       { clubs.map(club => (
-          <Link to = {`/clubs/${club.id}`}><div key = {club.id}>
-            <h1> {club.name} </h1>
-          </div>
-          </Link>
+        <ul key = {club.id}>
+          <li key = {club.id}>
+            <Link to = {`/clubs/${club.id}`}><div key = {club.id}>
+              <h1> {club.name} </h1>
+            </div>
+            </Link>
+          </li>
+        </ul>
         ))
       }
    </div>

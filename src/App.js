@@ -9,14 +9,21 @@ import UpdateProfile from './pages/private/User/Profile/UserViews/UpdateProfile'
 import UserProfile from './pages/private/User/Profile/UserViews/UserProfile';
 import Dogs from './pages/private/Dogs/Dogs';
 import Dog from './pages/private/Dogs/Dog';
-import Handlers from './pages/private/Handlers';
-import Handler from './pages/private/Handler';
+import Handlers from './pages/private/Handlers/Handlers';
+import Handler from './pages/private/Handlers/Handler';
 import Clubs from './pages/private/Clubs/Clubs';
 import Club from './pages/private/Clubs/Club';
 import Home from './pages/public/Home';
 import Unauthorized from './pages/public/Unauthorized';
 import NotFound from './pages/public/NotFound';
 import RequireAuth from './components/RequireAuth';
+import PersistLogin from './components/PersistLogin';
+import HandlersByLocation from './pages/private/Handlers/HandlersByLocation';
+import HandlerLayout from './pages/private/Handlers/HanderLayout';
+import ClubLayout from './pages/private/Clubs/ClubLayout';
+import ClubsByLocation from './pages/private/Clubs/ClubsByLocation';
+import ClubsBySport from './pages/private/Clubs/ClubsBySport';
+import HandlersBySport from './pages/private/Handlers/HandlersBySport';
 
 
 
@@ -35,18 +42,35 @@ function App() {
         <Route path = '/unauthorized' element = {<Unauthorized />} />
         <Route path = '/404NotFound' element = {<NotFound />} />
       
-      <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
-        <Route path = '/user:id' element = {<UserProfile />} />
-        <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
+      <Route element ={<PersistLogin />} >
+        <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
 
-        <Route path = '/dogs' element = {<Dogs  />} />
-        <Route path = '/dogs:id' element = {<Dog/> } />
+            <Route path = '/user:id' element = {<UserProfile />} />
+            <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
 
-        <Route path = '/handlers' element = {<Handlers  />} />
-        <Route path = '/handlers/:id' element = {<Handler/> } />
 
-        <Route path = '/clubs' element = {<Clubs  />} />
-        <Route path = '/clubs/:id' element = {<Club/> } />
+            <Route path = '/dogs' element = {<Dogs  />} />
+            <Route path = '/dogs/:id' element = {<Dog/> } />
+
+            <Route path = '/handlers/:id' element = {<Handler/> } />
+            <Route path = '/clubs/:id' element = {<Club/> } />
+
+          
+
+          <Route path = '/handlers' element = {<HandlerLayout />}>
+            <Route path = '/handlers' element = {<Handlers  />} />
+            <Route path = '/handlers/location/:id' element = {<HandlersByLocation />} />
+            <Route path = '/handlers/sports/:id' element = {<HandlersBySport />} />
+          </Route>
+
+          <Route path = '/clubs' element = {<ClubLayout />}>
+            <Route path = '/clubs' element = {<Clubs  />} />
+            <Route path = '/clubs/location/:id' element = {<ClubsByLocation />} />
+            <Route path = '/clubs/sports/:id' element = {<ClubsBySport /> } />
+          </Route>
+         
+          
+        </Route>
       </Route>
       </Route>
         
