@@ -18,18 +18,20 @@ const Handlers = () => {
       console.error(err);
     }
   }
-  console.log(handlers);
+ 
 
   return (
     <div>
       
       {
         handlers.map(handler => (
-          <Link to = {`/handlers/${handler.id}`}>
-              <div key = {handler.id}>
-                <h1> {handler.name} </h1>
-              </div>
-          </Link>
+          <ul key = {handler.id}>
+            <Link to = {`/handlers/${handler.id}`}>
+                <div key = {handler.id}>
+                  <h1> {handler.name} </h1>
+                </div>
+            </Link>
+          </ul>
         ))
       }
       

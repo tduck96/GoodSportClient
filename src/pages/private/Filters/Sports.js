@@ -22,7 +22,7 @@ const Sports = () => {
             sports.map(sport => (
                 <ul key = {sport.id}>
                     <li key = {sport.id}>
-                        <Link to = {`./sport/${sport.id}`}>{sport.name}</Link>
+                        <Link to = {`./sports/${sport.id}`}>{sport.name}</Link>
                     </li>
                 </ul>
             ))

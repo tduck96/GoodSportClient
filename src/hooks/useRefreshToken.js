@@ -12,7 +12,6 @@ const useRefreshToken = () => {
             withCredentials: true
         })
 
-            console.log(response.data);
 
         setAuth({
             role: response.data.role, 

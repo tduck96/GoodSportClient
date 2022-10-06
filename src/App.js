@@ -45,7 +45,7 @@ function App() {
       <Route element ={<PersistLogin />} >
         <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
 
-            <Route path = '/user:id' element = {<UserProfile />} />
+            <Route path = '/user/:id' element = {<UserProfile />} />
             <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
 
 
@@ -54,19 +54,23 @@ function App() {
 
             <Route path = '/handlers/:id' element = {<Handler/> } />
             <Route path = '/clubs/:id' element = {<Club/> } />
+            <Route path = '/clubs/sports/:id' element = {<ClubsBySport /> } />
+            <Route path = '/handlers/sports/:id' element = {<HandlersBySport />} />
+            <Route path = '/clubs/location/:id' element = {<ClubsByLocation />} />
+            <Route path = '/handlers/location/:id' element = {<HandlersByLocation />} />
 
           
 
           <Route path = '/handlers' element = {<HandlerLayout />}>
             <Route path = '/handlers' element = {<Handlers  />} />
-            <Route path = '/handlers/location/:id' element = {<HandlersByLocation />} />
-            <Route path = '/handlers/sports/:id' element = {<HandlersBySport />} />
+            
+           
           </Route>
 
           <Route path = '/clubs' element = {<ClubLayout />}>
             <Route path = '/clubs' element = {<Clubs  />} />
-            <Route path = '/clubs/location/:id' element = {<ClubsByLocation />} />
-            <Route path = '/clubs/sports/:id' element = {<ClubsBySport /> } />
+            
+           
           </Route>
          
           

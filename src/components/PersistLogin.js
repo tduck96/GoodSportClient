@@ -27,8 +27,7 @@ const PersistLogin = () => {
     }, [])
 
     useEffect(() => {
-        console.log(`isLoading :${isLoading}`)
-        console.log(`aT :${(auth?.token)}`)
+       
     }, [isLoading])
 
     return (

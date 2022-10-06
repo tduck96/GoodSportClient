@@ -25,7 +25,6 @@ const Locations = () => {
     const getLocations = async () => {
      try {
         const response = await axios.get('Location');
-        console.log(response.data);
         setLocations(response.data);
 
      } 
@@ -44,7 +43,6 @@ const Locations = () => {
     };
   return (
     <div>
-        <form>
         <label for = "locations"> Choose Location : </label>
         <select name="locations" id="locations" onChange={changeHandler}>
           <option value = "0">Select:</option>
@@ -56,7 +54,7 @@ const Locations = () => {
         ))
       }
      </select>
-     </form>
+     
     </div>
   )
 }

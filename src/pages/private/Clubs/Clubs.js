@@ -13,11 +13,10 @@ const Clubs = () => {
   const getClubs = async () => {
     try {
       let response = await axios.get('/club');
-        console.log(response.data);
-        setClubs(response.data)
-
-        } catch (err) {
-        console.error(err);
+      setClubs(response.data)
+        } 
+    catch (err) {
+       console.error(err);
   }
 }
 
@@ -25,12 +24,6 @@ const Clubs = () => {
 
   return (
     <div>      
-      <div>
-        <h1> By Sport:</h1> 
-      </div>
-
-
-
       { clubs.map(club => (
         <ul key = {club.id}>
           <li key = {club.id}>

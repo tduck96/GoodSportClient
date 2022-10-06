@@ -17,7 +17,6 @@ const Club = () => {
       try {
         const response = await axios.get(`/club/${id}`);
         setClubData([response.data])
-        console.log(response.data)
       } catch (err) {
         console.error(err);
   }
@@ -27,7 +26,7 @@ const getSportData = async () => {
   try {
     const response = await axios.get(`/club/sports/${id}`);
     setSportData(response.data);
-    console.log(response.data)
+    
 
   }
   catch (err) {
