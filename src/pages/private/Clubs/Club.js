@@ -38,11 +38,14 @@ console.log(clubData);
 
   return (
     <div>
-      <h1> CLUB INFO</h1>
     {
       clubData.map(club => (
         <div key = {club.id}>
-          <h1> {club.name} </h1>
+          <h1> ClubName:{club.name} </h1>
+          <p> {club.location}</p>
+          <h2> About Us!</h2>
+          <p> {club.about}</p>
+          <p> Founded: {club.founded}</p>
           </div>
       ))
     }

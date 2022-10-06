@@ -50,9 +50,9 @@ function App() {
 
 
             <Route path = '/dogs' element = {<Dogs  />} />
-            <Route path = '/dogs/:id' element = {<Dog/> } />
+            <Route path = '/dog/:id' element = {<Dog/> } />
 
-            <Route path = '/handlers/:id' element = {<Handler/> } />
+            <Route path = '/handlers/:id' element = {<UserProfile/> } />
             <Route path = '/clubs/:id' element = {<Club/> } />
             <Route path = '/clubs/sports/:id' element = {<ClubsBySport /> } />
             <Route path = '/handlers/sports/:id' element = {<HandlersBySport />} />

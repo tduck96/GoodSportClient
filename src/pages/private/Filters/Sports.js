@@ -11,8 +11,15 @@ const Sports = () => {
     })
 
     const getSports = async () => {
-        const response = await axios.get('/Sport');
+        try {
+         const response = await axios.get('/Sport');
         setSports(response.data);
+        }
+        catch (err)
+        {
+            console.error(err)
+        }
+        
 
     }
 

@@ -12,6 +12,7 @@ const Handlers = () => {
   const getHandlers = async () => {
     try {
       const response = await axios.get('/handler');
+      console.log(response.data)
       setHandlers(response.data);
    }
     catch (err) {
@@ -28,7 +29,9 @@ const Handlers = () => {
           <ul key = {handler.id}>
             <Link to = {`/handlers/${handler.id}`}>
                 <div key = {handler.id}>
-                  <h1> {handler.name} </h1>
+                 
+                <h1> {handler.name} </h1>
+                <h3> {handler.location}</h3>
                 </div>
             </Link>
           </ul>

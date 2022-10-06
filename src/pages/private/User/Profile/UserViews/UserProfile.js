@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from '../../../../../api/axios';
 
 const UserProfile = () => {
@@ -19,7 +19,7 @@ const UserProfile = () => {
       const response = await axios.get(`/profile/${id}`);
       console.log(response.data);
       setProfileInfo([response.data]);
-      setDogInfo([response.data.dogs]);
+      setDogInfo(response.data.dogs);
   
     }
    catch (err) {
@@ -34,22 +34,27 @@ const UserProfile = () => {
         profileInfo.map(info => (
           <ul key = {info.id}>
             <div>
+              <img src = {info.photoUrl} alt = ''></img>
               <h1>Name : {info.name} </h1>
+              <p> {info.bio} </p>
+              
               <h1>Location : {info.location.name}</h1>
             </div>
           </ul>
         ))
       }
 
-      {
-        profileInfo.dogs.map(dog => (
+       {
+        dogInfo.map(dog => (
           <ul key = {dog.id}>
+            <Link to = {`/dog/${dog.id}`}>
             <div>
               <h2> Name : {dog.name}</h2>
             </div>
+            </Link>
           </ul>
         ))
-      }
+      } 
       
     </div>
   )
