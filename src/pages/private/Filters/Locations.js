@@ -1,6 +1,8 @@
 import {useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 import axios from '../../../api/axios'
+import styles from './Filters.module.css'
 
 const Locations = () => {
 
@@ -41,20 +43,23 @@ const Locations = () => {
 
         isMounted.current = true;
     };
-  return (
-    <div>
-        <label for = "locations"> Choose Location : </label>
-        <select name="locations" id="locations" onChange={changeHandler}>
-          <option value = "0">Select:</option>
 
-      {
-        locations.map(x => (
-          <option value = {x.id} key = {x.id}>{x.name}</option>
-         
-        ))
-      }
-     </select>
-     
+    
+
+  return (
+    <div className = {styles.LocationContainer}>
+    {/* //     <label for = "locations"> Choose Location : </label>
+    //     <select name="locations" id="locations" onChange={changeHandler}>
+    //       <option value = "0">Select:</option> */}
+
+      <DropdownButton id="dropdown-basic-button"  title="Sort by Location" className = {styles.dropBut}>
+        {
+          locations.map(x => (
+          <Dropdown.Item key = {x.id} as ={Link} to = {`./location/${x.id}`}> {x.name} </Dropdown.Item>
+          ))
+        }
+      </DropdownButton>
+    
     </div>
   )
 }

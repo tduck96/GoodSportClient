@@ -1,0 +1,9 @@
+.handlersContainer {
+    width: 100%;
+}
+.handlerLists {
+    display: flex;
+    padding: 1.5rem;
+    margin: .5rem;
+    border-bottom: .01rem  solid gray;;
+}

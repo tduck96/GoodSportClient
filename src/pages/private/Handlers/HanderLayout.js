@@ -5,8 +5,9 @@ import Sports from '../Filters/Sports'
 const HandlerLayout = () => {
     return (
       <main className = "App">
-        <Locations />
         <Sports />
+        <Locations />
+        
           <Outlet />
       </main>
     )

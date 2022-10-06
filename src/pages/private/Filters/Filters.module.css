@@ -1,0 +1,29 @@
+.sportsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: .02rem solid gray;
+    background-color: rgb(0, 0, 0);
+   
+}
+a {
+    color: inherit;
+}
+ .sportLink a {
+    color: white;
+}
+.sportLink {
+    background-color: rgb(241, 38, 48);
+    padding: .6rem;
+    border-radius: .9rem;
+    color: white
+}
+
+.LocationContainer {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
+}
+.dropBut {
+    background-color: black;
+}

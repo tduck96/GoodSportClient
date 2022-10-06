@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from '../../../api/axios';
+import styles from './Clubs.module.css'
 
 const Clubs = () => {
   const [clubs, setClubs] = useState([]);
@@ -23,15 +24,13 @@ const Clubs = () => {
 
 
   return (
-    <div>      
+    <div className = {styles.clubsContainer}>      
       { clubs.map(club => (
-        <ul key = {club.id}>
-          <li key = {club.id}>
+        <ul key = {club.id} className = {styles.clubList}>
             <Link to = {`/clubs/${club.id}`}><div key = {club.id}>
               <h1> {club.name} </h1>
             </div>
             </Link>
-          </li>
         </ul>
         ))
       }

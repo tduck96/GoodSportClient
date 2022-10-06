@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import axios from '../../../api/axios'
+import styles from './Filters.module.css'
 
 const Sports = () => {
 
@@ -24,13 +25,11 @@ const Sports = () => {
     }
 
   return (
-   <nav>
+   <nav className = {styles.sportsContainer}>
         {
             sports.map(sport => (
                 <ul key = {sport.id}>
-                    <li key = {sport.id}>
-                        <Link to = {`./sports/${sport.id}`}>{sport.name}</Link>
-                    </li>
+                        <Link to = {`./sports/${sport.id}`} className = {styles.sportLink}>{sport.name}</Link>
                 </ul>
             ))
         }

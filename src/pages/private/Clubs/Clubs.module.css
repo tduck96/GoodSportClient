@@ -1,0 +1,9 @@
+.clubsContainer {
+    width: 100%;
+}
+.clubList {
+    display: flex;
+    padding: 1.5rem;
+    margin: .5rem;
+    border-bottom: .01rem  solid gray;;
+}

@@ -4,8 +4,8 @@ import Sports from "../Filters/Sports"
 const ClubLayout = () => {
   return (
       <main className = "App">
-          <Locations />
           <Sports />
+          <Locations />
           <Outlet />
       </main>
     

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 1rem;
+}
+ a {
+    color: inherit;  
+}
+.navLink a {
+    color: white;
+}
+a:hover {
+    color: rgb(183, 181, 181)
+  }
+
+.navLink {
+    padding: 1rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    color: white;
+}
