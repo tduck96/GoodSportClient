@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom';
 import axios from '../../../api/axios';
-
+import styles from './Dog.module.css'
 const Dog = () => {
   const { id } = useParams();
   const [dogData, setDogData] = useState([]);
@@ -24,7 +24,7 @@ const Dog = () => {
 
 
   return (
-    <div>
+    <div className = {styles.dogProfileCard}>
       {
         dogData.map(dog => (
           <ul key = {dog.id}>

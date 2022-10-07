@@ -2,6 +2,9 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from '../../../../../api/axios';
+import styles from './User.module.css'
+import profilePic from './profilepic.jpg'
+import dogprofilePic from './millie1.jpeg';
 
 const UserProfile = () => {
 
@@ -29,33 +32,34 @@ const UserProfile = () => {
 
   }
   return (
-    <div>
+    <div className = {styles.container}>
       {
         profileInfo.map(info => (
-          <ul key = {info.id}>
-            <div>
-              <img src = {info.photoUrl} alt = ''></img>
-              <h1>Name : {info.name} </h1>
+          <ul key = {info.id} className = {styles.headerContainer}>
+            <div className = {styles.headerDetailContainer}>
+              <img src = {profilePic} alt = '' className = {styles.profilepic}></img>
+              <h2> {info.name} </h2>
               <p> {info.bio} </p>
-              
-              <h1>Location : {info.location.name}</h1>
+              <p>{info.location.name}</p>
             </div>
           </ul>
         ))
       }
-
+          <div className = {styles.dogsContainer}>
+            <h3 className = {styles.subHeader}> Dogs</h3>
        {
         dogInfo.map(dog => (
-          <ul key = {dog.id}>
+          <ul key = {dog.id} className = {styles.dogContainer}>
             <Link to = {`/dog/${dog.id}`}>
-            <div>
-              <h2> Name : {dog.name}</h2>
+            <div className = {styles.dogDetails}>
+              <img src = {dogprofilePic} alt = '' className = {styles.dogPic}></img>
+              <h3> {dog.name}</h3>
             </div>
             </Link>
           </ul>
         ))
       } 
-      
+      </div>
     </div>
   )
 }

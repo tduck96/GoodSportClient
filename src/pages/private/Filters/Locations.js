@@ -52,7 +52,7 @@ const Locations = () => {
     //     <select name="locations" id="locations" onChange={changeHandler}>
     //       <option value = "0">Select:</option> */}
 
-      <DropdownButton id="dropdown-basic-button"  title="Sort by Location" className = {styles.dropBut}>
+      <DropdownButton id="dropdown-basic-button" variant="danger"  title="Sort by Location">
         {
           locations.map(x => (
           <Dropdown.Item key = {x.id} as ={Link} to = {`./location/${x.id}`}> {x.name} </Dropdown.Item>

@@ -1,9 +1,17 @@
 .handlersContainer {
     width: 100%;
+  
+    
 }
 .handlerLists {
-    display: flex;
     padding: 1.5rem;
     margin: .5rem;
     border-bottom: .01rem  solid gray;;
+    display: block;
+}
+.photo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: .5rem;
 }
