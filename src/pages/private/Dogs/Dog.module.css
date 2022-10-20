@@ -1,0 +1,16 @@
+.dogProfileCard {
+width: 100%;
+display: flex;
+flex-direction: column;
+
+}
+.dogDetailsCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: .02rem solid gray;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 1.5rem;
+}

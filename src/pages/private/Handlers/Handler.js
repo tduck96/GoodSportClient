@@ -4,19 +4,26 @@ import { Link, useParams } from 'react-router-dom';
 import Locations from '../Filters/Locations';
 import axios from '../../../api/axios';
 
+import styles from '/Users/thomasduckworth/Desktop/DogSports/client/src/pages/private/User/Profile/UserViews/User.module.css'
 const Handler = () => {
   const { id } = useParams();
-  const [handlerData, setHandlerData] = useState([]);
-  const [dogData, setDogData] = useState([]);
+  const [profileInfo, setProfileInfo] = useState([]);
+  const [dogInfo, setDogInfo] = useState([]);
+  const [wallPosts, setWallPosts] = useState([]);
 
   useEffect(() => {
-    getHandlerData().then(getDogData());
+    getHandlerData()
   }, [])
 
   const getHandlerData = async () => {
     try {
-      const response = await axios.get(`/handler/${id}`);
-      setHandlerData([response.data]);
+      const response = await axios.get(`/user/${id}`);
+      console.log(response.data)
+
+      setProfileInfo([response.data]);
+      setDogInfo(response.data.dogs);
+      setWallPosts(response.data.wallPosts);
+
     } 
     catch (err) {
       console.error(err);
@@ -24,48 +31,59 @@ const Handler = () => {
   };
 
 
-  const getDogData = async () => {
-    try {
-      const response = await axios.get(`/handler/dogs/${id}`);
-      setDogData(response.data);
-      console.log(response.data);
-    }
-    catch (err) {
-      console.error(err);
-    }
-  };
+  
 
 
   return (
-    <div>
-      
+   
+     <div className = {styles.container}>
       {
-        handlerData.map(handler => (
-          <ul>
-            <li key = {handler.id}>
-              <div>
-                 <h1> NAME : {handler.name}</h1>
-              </div>
-            </li>
+        profileInfo.map(info => (
+          <ul key = {info.id} className = {styles.headerContainer}>
+            <div className = {styles.headerDetailContainer}>
+              <img src = {info.photos[0].url} alt = '' className = {styles.profilepic}></img>
+              <h2> {info.name} </h2>
+              <p> {info.bio} </p>
+              {/* <p>{info.location.name}</p> */}
+            </div>
           </ul>
         ))
-      }
+        } 
+
+          <div className = {styles.dogsContainer}>
+            <h3 className = {styles.subHeader}> Dogs</h3>
+
+
+           {
+        dogInfo.map(dog => (
+          <ul key = {dog.id} className = {styles.dogContainer}>
+            <Link to = {`/dog/${dog.id}`}>
+            <div className = {styles.dogDetails}>
+              <img src = '' alt = '' className = {styles.dogPic}></img>
+              <h3> {dog.name}</h3>
+            </div>
+            </Link>
+          </ul>
+        ))
+      }  
+       </div>
+
+       <div className = {styles.wallContainer} >
+      <h1> Wall Posts </h1>
 
       {
-        dogData.map(dog => (
-          <ul>
-            <li key = {dog.id}>
-          <Link to = {`/dogs/${dog.id}`}>
-            <div>
-              <h1> {dog.name}</h1>
-              <h1> {dog.breed.name}</h1>
-            </div>
-          </Link>
-          </li>
-          </ul>
-        ))
-      }
-  
+          wallPosts.map(post => (
+            <ul key = {post.id} className = {styles.wallPost}>
+              <Link to = '/' >
+              <p> {post.body} </p>
+              </Link>
+            </ul>
+          ))
+        } 
+        </div>
+
+
+
     </div>
   )
 }

@@ -13,11 +13,11 @@ const useRefreshToken = () => {
         })
 
 
-        setAuth({
+        setAuth({ 
             role: response.data.role, 
             token: response.data.token,
             refreshTok: response.data.refreshToken,
-            key: response.data.id
+            id: response.data.id,
         }
           
          );

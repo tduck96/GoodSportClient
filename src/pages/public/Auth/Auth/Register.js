@@ -1,32 +1,63 @@
-import {useState} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import {Form, Button} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '/Users/thomasduckworth/Desktop/DogSports/client/src/api/axios.js'
 import Login from './Login';
-import { Next } from 'react-bootstrap/esm/PageItem';
+import useAuth from '../../../../hooks/useAuth';
+import SignUpInfo from '../../../private/User/SignUpInfo';
+
+
 
 const Register = () => {
 
   const navigate = useNavigate();
-
+  const {setRegisterInfo, registerInfo} = useAuth();
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [registerStatus, setRegisterStatus] = useState('false');
+
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    if (isMounted.current) {
+      navigate(`/createprofile/${registerInfo}`);
+    } 
+    
+  }, [registerInfo])
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     const registerUser = async () => {
-      const response = await axios.post('/AuthHandler', { userName, password});
+      try {
+      const response = await axios.post('/AuthHandler', { 
+        Email: userName, 
+        Password: password
+      });
+
       console.log(response.data);
 
-        setRegisterStatus(response.data.success);
+         setRegisterStatus(response.data.success);
 
-        (registerStatus === 'false') ? alert(response.data.message) : navigate('/login');
+        console.log(response.data)
+
+        setRegisterInfo(response.data.id)
+
+        isMounted.current = true;
+
+
         
+        } catch(err) {
+          console.error(err)
         }
-        registerUser().then(setRegisterStatus(''));
+        
       }
+      registerUser()
+
+     
+
+    
+  }
 
   return (
     <Form>

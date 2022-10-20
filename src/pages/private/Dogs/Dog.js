@@ -27,7 +27,7 @@ const Dog = () => {
     <div className = {styles.dogProfileCard}>
       {
         dogData.map(dog => (
-          <ul key = {dog.id}>
+          <ul key = {dog.id} className = {styles.dogDetailsCard}>
             <h1> {dog.name} </h1>
             <p>{dog.weight} (lbs)</p>
             <p>{dog.about}</p>

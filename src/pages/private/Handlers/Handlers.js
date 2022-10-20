@@ -13,7 +13,7 @@ const Handlers = () => {
 
   const getHandlers = async () => {
     try {
-      const response = await axios.get('/handler');
+      const response = await axios.get('/user');
       console.log(response.data)
       setHandlers(response.data);
    }
@@ -29,13 +29,13 @@ const Handlers = () => {
       {
         handlers.map(handler => (
           <ul key = {handler.id} className = {styles.handlerLists}>
-            <Link to = {`/handlers/${handler.id}`} className = {styles.navLink}>
-              <img src = {photo} alt = '' className = {styles.photo}></img>
-                <div key = {handler.id} className = {styles.details}>
-                <h3> {handler.name} </h3>
-                <p> {handler.location}</p>
-                </div>
-            </Link>
+              <Link to = {`/handlers/${handler.id}`} className = {styles.navLink}>
+                <img src = {handler.urls[0]} alt = '' className = {styles.photo}></img>
+                  <div key = {handler.id} className = {styles.details}>
+                  <h3> {handler.name} </h3>
+                  <p> {handler.location}</p>
+                  </div>
+              </Link>
           </ul>
         ))
       }

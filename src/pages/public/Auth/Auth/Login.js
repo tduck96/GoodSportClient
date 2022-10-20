@@ -19,8 +19,14 @@ const Login = () => {
     const registerUser = async () => {
 
       try {
-        const response = await axios.post('/AuthHandler/login', { userName, password});
+        const response = await axios.post('/AuthHandler/login', {
+          Email: userName, 
+          Password: password
+        }
+          );
+
         setAuth(response.data);
+        console.log(response.data)
         navigate('/');
 
       } catch (err) {

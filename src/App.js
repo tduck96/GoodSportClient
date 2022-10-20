@@ -24,11 +24,15 @@ import ClubLayout from './pages/private/Clubs/ClubLayout';
 import ClubsByLocation from './pages/private/Clubs/ClubsByLocation';
 import ClubsBySport from './pages/private/Clubs/ClubsBySport';
 import HandlersBySport from './pages/private/Handlers/HandlersBySport';
+import SignUpInfo from './pages/private/User/SignUpInfo';
+import { useEffect } from 'react';
 
 
 
 
 function App() {
+
+
   return (
 
   
@@ -38,33 +42,32 @@ function App() {
       
         <Route path = '/' element = {<Home />} />
         <Route path = '/login' element = {<Login />} />
+        <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
         <Route path = '/register' element = {<Register />} />
         <Route path = '/unauthorized' element = {<Unauthorized />} />
         <Route path = '/404NotFound' element = {<NotFound />} />
+        <Route path = '/createprofile/:id' element = {<SignUpInfo />} />
       
       <Route element ={<PersistLogin />} >
         <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
+            <Route path = '/home' element = {<Home />}></Route>
 
-            <Route path = '/user/:id' element = {<UserProfile />} />
-            <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
-
-
+            <Route path = '/user/viewprofile' element = {<UserProfile />} />
+            <Route path = '/user/updateprofile/' element = {<UpdateProfile />} />
+            
+        
             <Route path = '/dogs' element = {<Dogs  />} />
             <Route path = '/dog/:id' element = {<Dog/> } />
 
-            <Route path = '/handlers/:id' element = {<UserProfile/> } />
+            <Route path = '/handlers/:id' element = {<Handler/> } />
             <Route path = '/clubs/:id' element = {<Club/> } />
             <Route path = '/clubs/sports/:id' element = {<ClubsBySport /> } />
             <Route path = '/handlers/sports/:id' element = {<HandlersBySport />} />
             <Route path = '/clubs/location/:id' element = {<ClubsByLocation />} />
             <Route path = '/handlers/location/:id' element = {<HandlersByLocation />} />
 
-          
-
           <Route path = '/handlers' element = {<HandlerLayout />}>
             <Route path = '/handlers' element = {<Handlers  />} />
-            
-           
           </Route>
 
           <Route path = '/clubs' element = {<ClubLayout />}>

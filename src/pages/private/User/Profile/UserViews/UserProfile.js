@@ -5,12 +5,20 @@ import axios from '../../../../../api/axios';
 import styles from './User.module.css'
 import profilePic from './profilepic.jpg'
 import dogprofilePic from './millie1.jpeg';
+import useAuth from '../../../../../hooks/useAuth';
+
 
 const UserProfile = () => {
 
+  const { setUserId, userId } = useAuth();
+
   const [profileInfo, setProfileInfo] = useState([]);
   const [dogInfo, setDogInfo] = useState([]);
-  const {id} = useParams();
+  const [wallPosts, setWallPosts] = useState([]);
+
+  const { auth } = useAuth();
+
+  const id = auth.id;
 
   useEffect(() => {
     getProfileData();
@@ -19,18 +27,26 @@ const UserProfile = () => {
   const getProfileData = async () => {
 
     try {
-      const response = await axios.get(`/profile/${id}`);
+      const response = await axios.get(`user/profile/${id}`);
       console.log(response.data);
       setProfileInfo([response.data]);
       setDogInfo(response.data.dogs);
+      setWallPosts(response.data.wallPosts);
+      setUserId(response.data.id);
+      
+      console.log(response.data.wallPosts);
   
     }
    catch (err) {
       console.error(err);
    }
-   console.log(dogInfo);
+   
+
+  
 
   }
+
+  
   return (
     <div className = {styles.container}>
       {
@@ -44,10 +60,10 @@ const UserProfile = () => {
             </div>
           </ul>
         ))
-      }
+        } 
           <div className = {styles.dogsContainer}>
             <h3 className = {styles.subHeader}> Dogs</h3>
-       {
+       {/* {
         dogInfo.map(dog => (
           <ul key = {dog.id} className = {styles.dogContainer}>
             <Link to = {`/dog/${dog.id}`}>
@@ -58,8 +74,26 @@ const UserProfile = () => {
             </Link>
           </ul>
         ))
-      } 
+      }  */}
+
+
       </div>
+
+      <div className = {styles.wallContainer} >
+      <h1> Wall Posts </h1>
+{/*        
+        {
+          wallPosts.map(post => (
+            <ul key = {post.id} className = {styles.wallPost}>
+              <Link to = '/' >
+              <p> {post.body} </p>
+              </Link>
+            </ul>
+          ))
+        } */}
+    </div>
+
+
     </div>
   )
 }
