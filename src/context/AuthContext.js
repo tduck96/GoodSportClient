@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
  
     return (
         <AuthContext.Provider value={{ auth, setAuth,
-         userId, setUserId,
          registerInfo, setRegisterInfo,
          locations, setLocations
          }}>

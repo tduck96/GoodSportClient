@@ -22,8 +22,7 @@ const Login = () => {
         const response = await axios.post('/AuthHandler/login', {
           Email: userName, 
           Password: password
-        }
-          );
+        });
 
         setAuth(response.data);
         console.log(response.data)

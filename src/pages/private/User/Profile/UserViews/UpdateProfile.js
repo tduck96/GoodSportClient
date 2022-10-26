@@ -12,9 +12,9 @@ const UpdateProfile = () => {
   const[sports, setSports] = useState([]);
   const[bio, setBio] = useState('');
 
-  const {userId, auth} = useAuth();
+  const { auth} = useAuth();
 
-  const id = auth.id;
+  
   
 useEffect(() => {
   getLocations();
@@ -39,21 +39,20 @@ useEffect(() => {
        console.error(err);
     }
 
-    locations.map(map => {
-      console.log(map.name)
-    })
+    
    }
 
    const submitHandler = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`/user/${userId}/${id}`, 
+      const response = await axios.put(`/User`, 
       {
-        Id: userId, 
+        Id: auth.userId, 
         Bio: bio,
         Name: name,
-        locationId: location
+        locationId: 1,
+        HandlerId: auth.id
 
       });
 
@@ -96,7 +95,7 @@ useEffect(() => {
        </div> */}
        <div class="form-group">
          <label for="exampleFormControlTextarea1">Bio</label>
-         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setBio(e.target.value)}></textarea>
        </div>
        <button type = "submit" onClick = {submitHandler}>Update</button>
      </form>

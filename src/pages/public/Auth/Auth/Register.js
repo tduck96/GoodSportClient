@@ -35,28 +35,17 @@ const Register = () => {
         Password: password
       });
 
-      console.log(response.data);
-
          setRegisterStatus(response.data.success);
+         setRegisterInfo(response.data.id)
+         isMounted.current = true;
 
-        console.log(response.data)
-
-        setRegisterInfo(response.data.id)
-
-        isMounted.current = true;
-
-
-        
         } catch(err) {
           console.error(err)
         }
         
       }
-      registerUser()
+      registerUser();
 
-     
-
-    
   }
 
   return (
