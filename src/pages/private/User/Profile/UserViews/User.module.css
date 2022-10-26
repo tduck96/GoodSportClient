@@ -80,5 +80,9 @@
 }
 
 input[type="file"] {
-    display: none;
+    /* display: none; */
+}
+.uploadedThumb {
+    height: 200px;
+    width: 200px;
 }

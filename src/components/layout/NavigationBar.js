@@ -43,8 +43,8 @@ const NavigationBar = () => {
           <Dropdown.Toggle variant="danger"  id="dropdown-basic">
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">View Profile</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Edit profile</Dropdown.Item>
+            <Dropdown.Item><NavLink to ='/user/viewprofile'>View profile</NavLink></Dropdown.Item>
+            <Dropdown.Item><NavLink to ='/user/updateprofile'>Edit profile</NavLink></Dropdown.Item>
             <Dropdown.Item onClick = {onLogout}>Logout</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

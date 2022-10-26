@@ -57,24 +57,27 @@ const UserProfile = () => {
               <h2> {info.name} </h2>
               <p> {info.bio} </p>
               <p>{info.location.name}</p>
+              <Link to = '/user/updateprofile'>Update</Link>
             </div>
           </ul>
         ))
         } 
+        
           <div className = {styles.dogsContainer}>
             <h3 className = {styles.subHeader}> Dogs</h3>
-       {/* {
+        {
         dogInfo.map(dog => (
           <ul key = {dog.id} className = {styles.dogContainer}>
-            <Link to = {`/dog/${dog.id}`}>
+            <Link to = {`/user/dog/${dog.id}`}>
             <div className = {styles.dogDetails}>
               <img src = {dogprofilePic} alt = '' className = {styles.dogPic}></img>
               <h3> {dog.name}</h3>
             </div>
             </Link>
+            <Link to = {`/dog/editdog/${dog.id}`}> Edit Dog </Link>
           </ul>
         ))
-      }  */}
+      }  
 
 
       </div>

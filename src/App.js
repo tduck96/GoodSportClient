@@ -25,7 +25,11 @@ import ClubsByLocation from './pages/private/Clubs/ClubsByLocation';
 import ClubsBySport from './pages/private/Clubs/ClubsBySport';
 import HandlersBySport from './pages/private/Handlers/HandlersBySport';
 import SignUpInfo from './pages/private/User/SignUpInfo';
+import EditDog from './pages/private/Dogs/EditDog';
 import { useEffect } from 'react';
+import AddProfilePicture from './pages/private/User/Profile/UserViews/AddProfilePicture';
+import DogProfileForUser from './pages/private/Dogs/DogProfileForUser';
+import DogPhotoUpload from './pages/private/Dogs/DogPhotoUpload';
 
 
 
@@ -54,10 +58,14 @@ function App() {
 
             <Route path = '/user/viewprofile' element = {<UserProfile />} />
             <Route path = '/user/updateprofile/' element = {<UpdateProfile />} />
+            <Route path = '/user/addprofilepicture/' element = {<AddProfilePicture />} />
             
         
             <Route path = '/dogs' element = {<Dogs  />} />
             <Route path = '/dog/:id' element = {<Dog/> } />
+            <Route path = '/user/dog/:id' element = {<DogProfileForUser />} />
+            <Route path = '/dog/editdog/:id' element = {<EditDog />} />
+            <Route path = '/dog/uploadphoto/:id' element = {<DogPhotoUpload />} />
 
             <Route path = '/handlers/:id' element = {<Handler/> } />
             <Route path = '/clubs/:id' element = {<Club/> } />
