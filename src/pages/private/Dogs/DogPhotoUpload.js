@@ -1,14 +1,13 @@
 import React, { useState, useRef } from 'react'
+import { useParams } from 'react-router-dom';
 import axios from '../../../api/axios';
-import useAuth from '../../../hooks/useAuth';
-
 
 const DogPhotoUpload = () => {
 
     const [file, setFile] = useState('');
-    const {auth} = useAuth();
     const [url, setUrl] = useState('');
     
+    const {id} = useParams();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -17,7 +16,7 @@ const DogPhotoUpload = () => {
          data.append("file", file);
 
          try {
-            const response = await axios.post(`/profile/addprofilepic/${auth.userId}`, data);
+            const response = await axios.post(`/addphoto/${id}`, data);
             console.log(response.data)
             setUrl(response.data);
             }

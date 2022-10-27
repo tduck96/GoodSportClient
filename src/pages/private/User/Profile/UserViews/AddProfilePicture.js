@@ -27,9 +27,6 @@ const AddProfilePicture = () => {
         
     }
     
-    
-
-
   return (
     <section>
         <form method="post" encType="multipart/form-data" >
