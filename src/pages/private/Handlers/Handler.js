@@ -59,7 +59,7 @@ const Handler = () => {
           <ul key = {dog.id} className = {styles.dogContainer}>
             <Link to = {`/dog/${dog.id}`}>
             <div className = {styles.dogDetails}>
-              <img src = '' alt = '' className = {styles.dogPic}></img>
+              <img src = {dog.photoUrl} alt = '' className = {styles.dogPic}></img>
               <h3> {dog.name}</h3>
             </div>
             </Link>

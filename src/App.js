@@ -7,7 +7,6 @@ import Login from './pages/public/Auth/Auth/Login';
 import Register from './pages/public/Auth/Auth/Register';
 import UpdateProfile from './pages/private/User/Profile/UserViews/UpdateProfile';
 import UserProfile from './pages/private/User/Profile/UserViews/UserProfile';
-import Dogs from './pages/private/Dogs/Dogs';
 import Dog from './pages/private/Dogs/Dog';
 import Handlers from './pages/private/Handlers/Handlers';
 import Handler from './pages/private/Handlers/Handler';
@@ -30,7 +29,6 @@ import CreateDog from './pages/private/Dogs/CreateDog';
 import { useEffect } from 'react';
 import AddProfilePicture from './pages/private/User/Profile/UserViews/AddProfilePicture';
 import DogProfileForUser from './pages/private/Dogs/DogProfileForUser';
-import DogPhotoUpload from './pages/private/Dogs/DogPhotoUpload';
 
 
 
@@ -61,12 +59,9 @@ function App() {
             <Route path = '/user/updateprofile/' element = {<UpdateProfile />} />
             <Route path = '/user/addprofilepicture/' element = {<AddProfilePicture />} />
             
-        
-            <Route path = '/dogs' element = {<Dogs  />} />
             <Route path = '/dog/:id' element = {<Dog/> } />
             <Route path = '/user/dog/:id' element = {<DogProfileForUser />} />
             <Route path = '/dog/editdog/:id' element = {<EditDog />} />
-            <Route path = '/dog/uploadphoto/:id' element = {<DogPhotoUpload />} />
             <Route path = '/dog/createdog/' element = {<CreateDog />} />
 
             <Route path = '/handlers/:id' element = {<Handler/> } />

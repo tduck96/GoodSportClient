@@ -12,6 +12,8 @@ const SignUpInfo = () => {
  const [name, setName] = useState('');
  const [bio, setBio] = useState('');
  const [locations, setLocations] = useState([]);
+ const [url, setUrl] = useState('')
+ const [file, setFile] = useState('')
  const navigate = useNavigate();
 
 useEffect(() => {
@@ -37,7 +39,8 @@ useEffect(() => {
     {
       Name: name,
       Bio: bio,
-      locationId: location
+      locationId: location,
+      photoUrl: url
     }
     );
 
@@ -49,15 +52,33 @@ useEffect(() => {
   }
  }
 
+ const photoSubmit = async (e) => {
+  e.preventDefault();
+
+   const data = new FormData();
+   data.append("file", file);
+
+   try {
+      const response = await axios.post(`/profile/addprofilepic/`, 
+       data
+       );
+      console.log(response.data)
+      setUrl(response.data);
+      }
+   catch (err) {
+      console.error(err);
+  }
+  
+}
+
+
  
 
 
   return (
     <div>
       <h1> Add some details! </h1>
-
       <div>
-        
        <form>
        <div class="form-group">
          <label for="exampleFormControlInput1">Name</label>
@@ -79,11 +100,23 @@ useEffect(() => {
          <label for="exampleFormControlTextarea1">Bio</label>
          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setBio(e.target.value)}></textarea>
        </div>
-       <button type = "submit" onClick = {submitHandler}>Save</button>
+       
      </form>
 
-     
-
+     <section>
+        <form method="post" encType="multipart/form-data" >
+          
+            <label for="file">Choose file to upload</label>
+            <input type="file"  id="file" name="file" multiple onChange={(e) => setFile(
+              e.target.files[0])
+                }
+               />
+          
+             <button onClick = {photoSubmit}>Upload</button>
+              <img src = {url} alt = 'uploaded img'></img> 
+        </form>
+  </section>
+  <button type = "submit" onClick = {submitHandler}>Save</button>
     </div>
     </div>
    

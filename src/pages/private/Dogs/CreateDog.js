@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from '../../../api/axios';
 import useAuth from '../../../hooks/useAuth';
 
@@ -15,6 +15,7 @@ const CreateDog = () => {
     const [url, setUrl] = useState('');
     const {id} = useParams();
     const {auth} = useAuth();
+    const navigate = useNavigate();
   
 
   const submitHandler = async (e) => {
@@ -38,6 +39,7 @@ const CreateDog = () => {
     catch(err) {
       console.error(err);
     }
+    navigate(`/user/viewprofile`)
   }
 
   const photoSubmit = async (e) => {
@@ -54,6 +56,7 @@ const CreateDog = () => {
      catch (err) {
         console.error(err);
     }
+   
     
  }
   return (
@@ -83,7 +86,7 @@ const CreateDog = () => {
        <label for="exampleFormControlTextarea1">About</label>
        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setAbout(e.target.value)} ></textarea>
      </div>
-     <button type = "submit" onClick= {submitHandler}>Update</button>
+     
      </form>
 
      
@@ -106,6 +109,7 @@ const CreateDog = () => {
           <button onClick = {photoSubmit}>Upload</button>
   </form>
   </section>
+  <button type = "submit" onClick= {submitHandler}>Update</button>
   </div>
   )
 }

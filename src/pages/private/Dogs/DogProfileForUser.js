@@ -29,6 +29,7 @@ const DogProfileForUser = () => {
         {
           dogData.map(dog => (
             <ul key = {dog.id} className = {styles.dogDetailsCard}>
+              <img src = {dog.photoUrl} alt = ''></img>
               <h1> {dog.name} </h1>
               <p>{dog.weight} (lbs)</p>
               <p>{dog.about}</p>

@@ -47,6 +47,7 @@ const UserProfile = () => {
   
   return (
     <div className = {styles.container}>
+      
       {
         profileInfo.map(info => (
           <ul key = {info.id} className = {styles.headerContainer}>
@@ -60,7 +61,6 @@ const UserProfile = () => {
           </ul>
         ))
         } 
-        
           <div className = {styles.dogsContainer}>
             <h3 className = {styles.subHeader}> Dogs</h3>
             <Link to = '/dog/createdog'>Add</Link>
@@ -69,7 +69,7 @@ const UserProfile = () => {
           <ul key = {dog.id} className = {styles.dogContainer}>
             <Link to = {`/user/dog/${dog.id}`}>
             <div className = {styles.dogDetails}>
-              <img src = {dogprofilePic} alt = '' className = {styles.dogPic}></img>
+              <img src = {dog.photoUrl} alt = '' className = {styles.dogPic}></img>
               <h3> {dog.name}</h3>
             </div>
             </Link>
@@ -82,7 +82,7 @@ const UserProfile = () => {
       </div>
 
       <div className = {styles.wallContainer} >
-      <h1> Wall Posts </h1>
+      <h1> What I've Been Up To </h1>
 {/*        
         {
           wallPosts.map(post => (
