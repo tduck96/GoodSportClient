@@ -6,11 +6,10 @@ import styles from './User.module.css'
 import profilePic from './profilepic.jpg'
 import dogprofilePic from './millie1.jpeg';
 import useAuth from '../../../../../hooks/useAuth';
+import PostCreate from '../PostCreate';
 
 
 const UserProfile = () => {
-
-  const { setUserId, userId } = useAuth();
 
   const [profileInfo, setProfileInfo] = useState([]);
   const [dogInfo, setDogInfo] = useState([]);
@@ -32,9 +31,6 @@ const UserProfile = () => {
       setProfileInfo([response.data]);
       setDogInfo(response.data.dogs);
       setWallPosts(response.data.wallPosts);
-      setUserId(response.data.id);
-      
-      console.log(response.data.wallPosts);
   
     }
    catch (err) {
@@ -83,16 +79,18 @@ const UserProfile = () => {
 
       <div className = {styles.wallContainer} >
       <h1> What I've Been Up To </h1>
-{/*        
+      <PostCreate getProfileData = {getProfileData} />
+      
         {
           wallPosts.map(post => (
-            <ul key = {post.id} className = {styles.wallPost}>
-              <Link to = '/' >
+             <ul key = {post.id} className = {styles.wallPost}>
+               <Link to = '/' >
               <p> {post.body} </p>
-              </Link>
+              <img src = {post.photoUrl} alt = ''></img>
+               </Link>
             </ul>
-          ))
-        } */}
+         ))
+        }
     </div>
 
 
