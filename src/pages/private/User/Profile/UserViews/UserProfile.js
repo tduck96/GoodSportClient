@@ -40,9 +40,7 @@ const UserProfile = () => {
    catch (err) {
       console.error(err);
    }
-   
 
-  
 
   }
 
@@ -65,7 +63,7 @@ const UserProfile = () => {
         
           <div className = {styles.dogsContainer}>
             <h3 className = {styles.subHeader}> Dogs</h3>
-            <Link to = '/createdog'>Add</Link>
+            <Link to = '/dog/createdog'>Add</Link>
         {
         dogInfo.map(dog => (
           <ul key = {dog.id} className = {styles.dogContainer}>
