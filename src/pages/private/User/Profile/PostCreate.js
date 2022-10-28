@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from '../../../../api/axios';
 import useAuth from '../../../../hooks/useAuth';
+import UploadButton from './UserViews/UploadButton';
 
 const PostCreate = ({getProfileData}) => {
 
@@ -12,7 +13,6 @@ const PostCreate = ({getProfileData}) => {
     const navigate = useNavigate();
 
     const photoSubmit = async (e) => {
-        e.preventDefault();
       
          const data = new FormData();
          data.append("file", file);
@@ -31,7 +31,6 @@ const PostCreate = ({getProfileData}) => {
 
       const postSubmit = async (e) => {
         e.preventDefault();
-
         try {
             const response = await axios.post(`/wallpost/${auth.userId}`,
             {
@@ -58,7 +57,8 @@ const PostCreate = ({getProfileData}) => {
             <input type="file"  id="file" name="file" multiple onChange={(e) => setFile(
                         e.target.files[0])
                     }  />
-            <button onClick = {photoSubmit} >Upload Image</button>
+            {/* <button onClick = {photoSubmit} >Upload Image</button> */}
+            <UploadButton photoSubmit = {photoSubmit}/>
             <img src = {url} alt = ''></img>
              <button onClick = {postSubmit}>Create Post</button>
          </form>

@@ -2,6 +2,7 @@ import  { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import useRefreshToken from '/Users/thomasduckworth/Desktop/DogSports/client/src/hooks/useRefreshToken.js';
 import useAuth from '/Users/thomasduckworth/Desktop/DogSports/client/src/hooks/useAuth.js';
+import Spin from './layout/Spin';
 
 const PersistLogin = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +34,7 @@ const PersistLogin = () => {
     return (
     <>
      {isLoading
-     ? <p> Loading...</p>
+     ? <Spin />
     : <Outlet />
     }
     </>
