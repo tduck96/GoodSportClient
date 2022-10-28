@@ -29,6 +29,9 @@ import CreateDog from './pages/private/Dogs/CreateDog';
 import { useEffect } from 'react';
 import AddProfilePicture from './pages/private/User/Profile/UserViews/AddProfilePicture';
 import DogProfileForUser from './pages/private/Dogs/DogProfileForUser';
+import EditPost from './pages/private/User/Profile/UserViews/EditPost';
+import DeletePost from './pages/private/User/Profile/UserViews/DeletePost';
+import DeleteDog from './pages/private/Dogs/DeleteDog';
 
 
 
@@ -58,10 +61,14 @@ function App() {
             <Route path = '/user/viewprofile' element = {<UserProfile />} />
             <Route path = '/user/updateprofile/' element = {<UpdateProfile />} />
             <Route path = '/user/addprofilepicture/' element = {<AddProfilePicture />} />
+
+            <Route path = '/editpost/:id' element = {<EditPost  />} />
+            <Route path = '/deletepost/:id' element = {<DeletePost />} />
             
             <Route path = '/dog/:id' element = {<Dog/> } />
             <Route path = '/user/dog/:id' element = {<DogProfileForUser />} />
             <Route path = '/dog/editdog/:id' element = {<EditDog />} />
+            <Route path = '/dog/deletedog/:id' element = {<DeleteDog />} />
             <Route path = '/dog/createdog/' element = {<CreateDog />} />
 
             <Route path = '/handlers/:id' element = {<Handler/> } />

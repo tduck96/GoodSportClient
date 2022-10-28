@@ -7,6 +7,8 @@ import profilePic from './profilepic.jpg'
 import dogprofilePic from './millie1.jpeg';
 import useAuth from '../../../../../hooks/useAuth';
 import PostCreate from '../PostCreate';
+import DeletePost from './DeletePost';
+import DeleteDog from '../../../Dogs/DeleteDog';
 
 
 const UserProfile = () => {
@@ -69,7 +71,8 @@ const UserProfile = () => {
               <h3> {dog.name}</h3>
             </div>
             </Link>
-            <Link to = {`/dog/editdog/${dog.id}`}> Edit Dog </Link>
+            <Link to = {`/dog/editdog/${dog.id}`}> Edit  </Link>
+            <DeleteDog id = {dog.id} getProfileData = {getProfileData}/>
           </ul>
         ))
       }  
@@ -84,6 +87,8 @@ const UserProfile = () => {
         {
           wallPosts.map(post => (
              <ul key = {post.id} className = {styles.wallPost}>
+              <Link to = {`/editpost/${post.id}`}>Edit</Link>
+              <DeletePost id = {post.id} getProfileData = {getProfileData}/> 
                <Link to = '/' >
               <p> {post.body} </p>
               <img src = {post.photoUrl} alt = ''></img>
