@@ -9,6 +9,7 @@ import useAuth from '../../../../../hooks/useAuth';
 import PostCreate from '../PostCreate';
 import DeletePost from './DeletePost';
 import DeleteDog from '../../../Dogs/DeleteDog';
+import EditPost from './EditPost';
 
 
 const UserProfile = () => {
@@ -87,11 +88,11 @@ const UserProfile = () => {
         {
           wallPosts.map(post => (
              <ul key = {post.id} className = {styles.wallPost}>
-              <Link to = {`/editpost/${post.id}`}>Edit</Link>
+              <EditPost id = {post.id} url = {post.photoUrl} getProfileData = {getProfileData}/>
               <DeletePost id = {post.id} getProfileData = {getProfileData}/> 
                <Link to = '/' >
               <p> {post.body} </p>
-              <img src = {post.photoUrl} alt = ''></img>
+              <img src = {post.photoUrl} alt = '' className = {styles.postImg}></img>
                </Link>
             </ul>
          ))

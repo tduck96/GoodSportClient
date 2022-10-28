@@ -4,6 +4,7 @@ import axios from '../../../../api/axios';
 import useAuth from '../../../../hooks/useAuth';
 import UploadButton from './UserViews/UploadButton';
 
+
 const PostCreate = ({getProfileData}) => {
 
     const [body, setBody] = useState('');
@@ -57,7 +58,6 @@ const PostCreate = ({getProfileData}) => {
             <input type="file"  id="file" name="file" multiple onChange={(e) => setFile(
                         e.target.files[0])
                     }  />
-            {/* <button onClick = {photoSubmit} >Upload Image</button> */}
             <UploadButton photoSubmit = {photoSubmit}/>
             <img src = {url} alt = ''></img>
              <button onClick = {postSubmit}>Create Post</button>

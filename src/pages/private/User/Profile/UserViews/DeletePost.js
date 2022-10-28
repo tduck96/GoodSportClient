@@ -21,10 +21,6 @@ const DeletePost = ({id, getProfileData}) => {
     setShow(false);
   }
 
- 
-
-  
-
   return (
     <>
       <Button variant="danger" onClick={handleShow}>

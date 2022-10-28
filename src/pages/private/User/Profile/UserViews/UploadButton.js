@@ -12,12 +12,12 @@ const UploadButton = ({photoSubmit}) => {
         setLoading(false);
       });
     }
-  }, [isLoading, photoSubmit]);
+  }, [isLoading]);
 
   const handleClick = () => {
   setLoading(true)
-  photoSubmit().then(setLoading(false));
-
+ 
+  };
   return (
       <>
       <Button
@@ -30,7 +30,6 @@ const UploadButton = ({photoSubmit}) => {
    
     </>
   )
-}
 }
 
 export default UploadButton
