@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from '../../../../../api/axios';
 import useAuth from '../../../../../hooks/useAuth';
 import UploadButton from './UploadButton';
 import styles from './PostCreate.module.css'
+import { Spinner } from 'react-bootstrap';
 
 
 const PostCreate = ({getProfileData}) => {
@@ -13,6 +14,13 @@ const PostCreate = ({getProfileData}) => {
     const [url, setUrl] = useState('');
     const { auth } = useAuth();
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+
+   
+useEffect(() => {
+  setLoading(true);
+  photoSubmit();
+}, [file]);
 
     const photoSubmit = async (e) => {
       
@@ -25,6 +33,7 @@ const PostCreate = ({getProfileData}) => {
              );
             console.log(response.data)
             setUrl(response.data);
+            setLoading(false);
             }
          catch (err) {
             console.error(err);
@@ -48,6 +57,7 @@ const PostCreate = ({getProfileData}) => {
         setUrl();
         setBody('');
         setFile('');
+       
         getProfileData();
 
       }
@@ -62,11 +72,20 @@ const PostCreate = ({getProfileData}) => {
                           e.target.files[0])
                       }  />
                       </label>
-              <p>{file.name}</p>
+              <p className = {styles.fileName}>{file.name}</p>
              </section>
-             <img src = {url} alt = '' className = {styles.uploaded}></img>
+
+             {
+              loading === true ? <Spinner /> : <p></p>
+             }
+
+             {
+              url ? <img src = {url} alt = 'pic' className = {styles.uploaded}></img>
+                   : <p></p>
+             }
+              
+             
              <section className = {styles.buttonSection}>
-            <UploadButton photoSubmit = {photoSubmit}/>
              <button onClick = {postSubmit} className = {styles.createButton}>Create Post</button>
              </section>
              

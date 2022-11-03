@@ -29,7 +29,7 @@ const DeleteDog = ({id, getProfileData}) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Delete Post</Modal.Title>
+          <Modal.Title>Delete Dog</Modal.Title>
         </Modal.Header>
         <Modal.Body>Are you sure you want to delete this dog? All changes will be final. </Modal.Body>
         <Modal.Footer>

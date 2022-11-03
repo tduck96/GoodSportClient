@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/button'
 import Modal from 'react-bootstrap/Modal'
 import axios from '../../../../../api/axios';
-
+import styles from './Delete.module.css'
 const DeletePost = ({id, getProfileData}) => {
 
  const [show, setShow] = useState(false);
@@ -23,7 +23,7 @@ const DeletePost = ({id, getProfileData}) => {
 
   return (
     <>
-      <Button variant="danger" onClick={handleShow}>
+      <Button variant="secondary" onClick={handleShow} className = {styles.delete}>
         Delete
       </Button>
 

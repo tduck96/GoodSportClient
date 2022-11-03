@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form'
 import axios from '../../../../../api/axios';
 import useAuth from '../../../../../hooks/useAuth';
+import styles from './Edit.module.css'
 
 const EditPost = ({url, id, getProfileData}) => {
     const [show, setShow] = useState(false);
@@ -27,7 +28,7 @@ const EditPost = ({url, id, getProfileData}) => {
 
 return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className = {styles.edit}>
         Edit
       </Button>
 

@@ -1,6 +1,5 @@
 .container {
     box-sizing: border-box;
-   
     flex-direction: column;
     width: 100%;
     overflow: hidden;
@@ -27,7 +26,21 @@
     justify-content: center;
     margin: 2rem;
 }
-
+.dogHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addDog {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(168, 168, 168);
+    padding: .7rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    width: 50px;
+    color: white;
+}
 .dogsContainer {
     background-color: white;
     box-sizing: border-box;
@@ -76,7 +89,8 @@
 }
 .wallPost {
     border-bottom: .02rem solid rgb(63, 63, 63);
-   margin-top: 1rem;
+     margin-top: 1rem;
+     margin: 1rem;
 }
 
 input[type="file"] {
@@ -89,4 +103,49 @@ input[type="file"] {
 .postImg {
     height: 100px;
     width: 100px;
+    margin: .5rem 0;
+}
+.postTop {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown {
+    background-color: rgb(152, 152, 152);
+    border: none;
+}
+.dropdown:active {
+    border: none;
+}
+.dropdown:hover {
+    background-color: rgb(152, 152, 152);
+}
+.postPhoto {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+.headerInfo {
+    display: flex;
+    
+}
+.body {
+    margin-top: 1rem;
+}
+.profileName {
+    font-size: 1.8rem;
+    font-weight: 200;
+    
+}
+.info {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+.location {
+    font-weight: 200;
+}
+.dogContainer {
+    display: flex;
+    justify-content: space-between;
 }

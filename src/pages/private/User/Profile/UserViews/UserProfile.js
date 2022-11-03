@@ -10,6 +10,9 @@ import PostCreate from './PostCreate';
 import DeletePost from './DeletePost';
 import DeleteDog from '../../../Dogs/DeleteDog';
 import EditPost from './EditPost';
+import EditDog from '../../../Dogs/EditDog';
+import { Dropdown } from 'react-bootstrap';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
 const UserProfile = () => {
@@ -52,17 +55,19 @@ const UserProfile = () => {
           <ul key = {info.id} className = {styles.headerContainer}>
             <div className = {styles.headerDetailContainer}>
               <img src = {info.photoUrl} alt = '' className = {styles.profilepic}></img>
-              <h2> {info.name} </h2>
-              <p> {info.bio} </p>
-              <p>{info.location.name}</p>
+              <h2 className = {styles.profileName}> {info.name} </h2>
+              <p className = {styles.info}> {info.bio} </p>
+              <p className = {styles.location}>{info.location.name}</p>
               <Link to = '/user/updateprofile'>Update</Link>
             </div>
           </ul>
         ))
         } 
           <div className = {styles.dogsContainer}>
+            <section className = {styles.dogHeader}>
             <h3 className = {styles.subHeader}> Dogs</h3>
-            <Link to = '/dog/createdog'>Add</Link>
+            <Link to = '/dog/createdog' className = {styles.addDog}>+</Link>
+            </section>
         {
         dogInfo.map(dog => (
           <ul key = {dog.id} className = {styles.dogContainer}>
@@ -72,28 +77,68 @@ const UserProfile = () => {
               <h3> {dog.name}</h3>
             </div>
             </Link>
-            <Link to = {`/dog/editdog/${dog.id}`}> Edit  </Link>
-            <DeleteDog id = {dog.id} getProfileData = {getProfileData}/>
+            <Dropdown>
+                        <Dropdown.Toggle variant="secondary" id="dropdown-basic" className = {styles.dropdown}>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                       <DropdownItem>
+                         <EditDog id = {dog.id} url = {dog.photoUrl} getProfileData = {getProfileData}/> 
+                         </DropdownItem>
+                          <DropdownItem>
+                            <DeleteDog id = {dog.id} getProfileData = {getProfileData}/>
+                           </DropdownItem>
+                          
+                        </Dropdown.Menu>
+                     </Dropdown>
+          
           </ul>
         ))
       }  
 
 
       </div>
-
-      <div className = {styles.wallContainer} >
-      <h1> What I've Been Up To </h1>
       <PostCreate getProfileData = {getProfileData} />
+      <div className = {styles.wallContainer} >
+      
       
         {
           wallPosts.map(post => (
              <ul key = {post.id} className = {styles.wallPost}>
-              <EditPost id = {post.id} url = {post.photoUrl} getProfileData = {getProfileData}/>
-              <DeletePost id = {post.id} getProfileData = {getProfileData}/> 
-               <Link to = {`/post/${post.id}`} >
-              <p> {post.body} </p>
-              <img src = {post.photoUrl} alt = '' className = {styles.postImg}></img>
-               </Link>
+              <section className = {styles.postTop}>
+
+               { profileInfo.map(info => (
+               <section className = {styles.headerInfo}>
+                <img src = {info.photoUrl} alt = '' className = {styles.postPhoto}></img>
+                <p><strong>{info.name}</strong></p>
+                </section>
+               ))}
+                    <Dropdown>
+                        <Dropdown.Toggle variant="secondary" id="dropdown-basic" className = {styles.dropdown}>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                       <DropdownItem>
+                         <EditPost id = {post.id} url = {post.photoUrl} getProfileData = {getProfileData}/> 
+                         </DropdownItem>
+                          <DropdownItem>
+                            <DeletePost id = {post.id} getProfileData = {getProfileData}/>
+                           </DropdownItem>
+                           <DropdownItem><Link to = {`/post/${post.id}`}>Comment</Link></DropdownItem>
+                        </Dropdown.Menu>
+                     </Dropdown>
+                     </section>
+
+                     <Link to = {`/post/${post.id}`} ><p className = {styles.body}> {post.body} </p></Link>
+                     
+                     <img src = {post.photoUrl} alt = '' className = {styles.postImg}></img>
+                     
+                     
+                    
+              
+             
+              
+               
+              
+              
             </ul>
          ))
         }

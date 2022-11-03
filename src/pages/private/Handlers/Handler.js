@@ -42,9 +42,9 @@ const Handler = () => {
           <ul key = {info.id} className = {styles.headerContainer}>
             <div className = {styles.headerDetailContainer}>
               <img src = {info.photoUrl} alt = '' className = {styles.profilepic}></img>
-              <h2> {info.name} </h2>
-              <p> {info.bio} </p>
-              {/* <p>{info.location.name}</p> */}
+              <h2 className = {styles.profileName}> {info.name} </h2>
+              <p className = {styles.info}> {info.bio} </p>
+              <p className = {styles.location}>{info.location.name}</p> 
             </div>
           </ul>
         ))
@@ -69,14 +69,19 @@ const Handler = () => {
        </div>
 
        <div className = {styles.wallContainer} >
-      <h1> Wall Posts </h1>
+      
 
       {
           wallPosts.map(post => (
             <ul key = {post.id} className = {styles.wallPost}>
-              <Link to = {`/post/${post.id}`} >
-              <p> {post.body} </p>
-              </Link>
+               { profileInfo.map(info => (
+               <section className = {styles.headerInfo}>
+                <img src = {info.photoUrl} alt = '' className = {styles.postPhoto}></img>
+                <p><strong>{info.name}</strong></p>
+                </section>
+               ))}
+              <Link to = {`/post/${post.id}`} ><p className = {styles.body}> {post.body} </p></Link>
+                  <img src = {post.photoUrl} alt = '' className = {styles.postImg}></img>
             </ul>
           ))
         } 

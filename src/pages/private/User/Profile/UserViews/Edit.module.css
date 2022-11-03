@@ -1,0 +1,9 @@
+.edit {
+    background-color: inherit;
+    border: none;
+    color: black;
+}
+.edit:hover {
+    background-color: green;
+    border: none;
+}
