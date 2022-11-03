@@ -32,6 +32,7 @@ import DogProfileForUser from './pages/private/Dogs/DogProfileForUser';
 import EditPost from './pages/private/User/Profile/UserViews/EditPost';
 import DeletePost from './pages/private/User/Profile/UserViews/DeletePost';
 import DeleteDog from './pages/private/Dogs/DeleteDog';
+import Post from './pages/private/User/Profile/UserViews/Post';
 
 
 
@@ -64,6 +65,7 @@ function App() {
 
             <Route path = '/editpost/:id' element = {<EditPost  />} />
             <Route path = '/deletepost/:id' element = {<DeletePost />} />
+            <Route path = '/post/:id' element = {<Post />} />
             
             <Route path = '/dog/:id' element = {<Dog/> } />
             <Route path = '/user/dog/:id' element = {<DogProfileForUser />} />

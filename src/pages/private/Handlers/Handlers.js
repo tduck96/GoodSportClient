@@ -30,7 +30,7 @@ const Handlers = () => {
         handlers.map(handler => (
           <ul key = {handler.id} className = {styles.handlerLists}>
               <Link to = {`/handlers/${handler.id}`} className = {styles.navLink}>
-                <img src = {handler.urls[0]} alt = '' className = {styles.photo}></img>
+                <img src = {handler.photoUrl} alt = '' className = {styles.photo}></img>
                   <div key = {handler.id} className = {styles.details}>
                   <h3> {handler.name} </h3>
                   <p> {handler.location}</p>

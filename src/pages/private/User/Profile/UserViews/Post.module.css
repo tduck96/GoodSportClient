@@ -1,0 +1,37 @@
+.postContainer {
+    width: 100%;
+}
+.section {
+    display: flex;
+    margin: .3rem 1rem;
+}
+.postThumbnail {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+.name {
+    margin: .2rem .7rem;
+    font-size: 1rem;
+}
+.postBody {
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+
+.controlsContainer {
+    margin: .8rem;
+    height: 45px;
+    display: flex;
+}
+.commentAddButton {
+    height: 40px;
+    margin: 0 1rem;
+}
+.commentInput {
+    height: 40px;
+    border-radius: .5rem;
+    border: .1px solid gray;
+    width: 60%;
+}

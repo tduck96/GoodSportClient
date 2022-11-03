@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
-import axios from '../../../../api/axios';
-import useAuth from '../../../../hooks/useAuth';
-import UploadButton from './UserViews/UploadButton';
+import axios from '../../../../../api/axios';
+import useAuth from '../../../../../hooks/useAuth';
+import UploadButton from './UploadButton';
+import styles from './PostCreate.module.css'
 
 
 const PostCreate = ({getProfileData}) => {
@@ -44,7 +45,7 @@ const PostCreate = ({getProfileData}) => {
             console.error(err);
         }
 
-        setUrl('');
+        setUrl();
         setBody('');
         setFile('');
         getProfileData();
@@ -52,15 +53,24 @@ const PostCreate = ({getProfileData}) => {
       }
   return (
     <div>
-      <section>
+      <section className = {styles.container}>
         <form>
-            <input type = "text" placeholder='Whats going on?' onChange= {(e) => setBody(e.target.value)}></input>
-            <input type="file"  id="file" name="file" multiple onChange={(e) => setFile(
-                        e.target.files[0])
-                    }  />
+          <section className = {styles.inputSection}>
+              <input type = "text" placeholder='Whats going on?' onChange= {(e) => setBody(e.target.value)} className = {styles.input}></input>
+              <label className = {styles.customUpload}> +
+              <input type="file"  id="file" name="file" multiple onChange={(e) => setFile(
+                          e.target.files[0])
+                      }  />
+                      </label>
+              <p>{file.name}</p>
+             </section>
+             <img src = {url} alt = '' className = {styles.uploaded}></img>
+             <section className = {styles.buttonSection}>
             <UploadButton photoSubmit = {photoSubmit}/>
-            <img src = {url} alt = ''></img>
-             <button onClick = {postSubmit}>Create Post</button>
+             <button onClick = {postSubmit} className = {styles.createButton}>Create Post</button>
+             </section>
+             
+             
          </form>
     </section>
     </div>

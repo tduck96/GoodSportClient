@@ -41,7 +41,7 @@ const Handler = () => {
         profileInfo.map(info => (
           <ul key = {info.id} className = {styles.headerContainer}>
             <div className = {styles.headerDetailContainer}>
-              <img src = {info.photos[0].url} alt = '' className = {styles.profilepic}></img>
+              <img src = {info.photoUrl} alt = '' className = {styles.profilepic}></img>
               <h2> {info.name} </h2>
               <p> {info.bio} </p>
               {/* <p>{info.location.name}</p> */}
@@ -74,7 +74,7 @@ const Handler = () => {
       {
           wallPosts.map(post => (
             <ul key = {post.id} className = {styles.wallPost}>
-              <Link to = '/' >
+              <Link to = {`/post/${post.id}`} >
               <p> {post.body} </p>
               </Link>
             </ul>

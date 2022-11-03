@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+}
+.inputSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.buttonSection {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+.input {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+.createButton {
+    height: 40px;
+    border: none;
+    background-color: rgb(247, 46, 46);
+    border-radius: .5rem;
+    margin: 1rem;
+    color: white;
+}
+.createButton:hover {
+    background-color: rgb(255,10,10);
+}
+input[type="file"] {
+    display: none;
+}
+.customUpload {
+    
+        width: 20%;
+        height: 40px;
+        border: 1px solid gray;
+        border-radius: .5rem;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+   
+}
+.uploaded {
+    height: 60px;
+    width: 60px;
+}

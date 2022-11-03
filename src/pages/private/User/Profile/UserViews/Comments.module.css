@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+.commentPhoto {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.headerSection {
+    display: flex;
+    margin: .2rem;
+}
+.commentContainer {
+    background-color: rgba(242, 242, 242, 0.793);
+    width: 75%;
+    margin: 1rem;
+    padding: .2rem;
+    border-radius: 1rem;
+}
+.info {
+    margin-left: .5rem;
+}

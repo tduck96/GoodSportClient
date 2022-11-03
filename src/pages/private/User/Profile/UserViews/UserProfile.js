@@ -6,7 +6,7 @@ import styles from './User.module.css'
 import profilePic from './profilepic.jpg'
 import dogprofilePic from './millie1.jpeg';
 import useAuth from '../../../../../hooks/useAuth';
-import PostCreate from '../PostCreate';
+import PostCreate from './PostCreate';
 import DeletePost from './DeletePost';
 import DeleteDog from '../../../Dogs/DeleteDog';
 import EditPost from './EditPost';
@@ -51,7 +51,7 @@ const UserProfile = () => {
         profileInfo.map(info => (
           <ul key = {info.id} className = {styles.headerContainer}>
             <div className = {styles.headerDetailContainer}>
-              <img src = {profilePic} alt = '' className = {styles.profilepic}></img>
+              <img src = {info.photoUrl} alt = '' className = {styles.profilepic}></img>
               <h2> {info.name} </h2>
               <p> {info.bio} </p>
               <p>{info.location.name}</p>
@@ -90,7 +90,7 @@ const UserProfile = () => {
              <ul key = {post.id} className = {styles.wallPost}>
               <EditPost id = {post.id} url = {post.photoUrl} getProfileData = {getProfileData}/>
               <DeletePost id = {post.id} getProfileData = {getProfileData}/> 
-               <Link to = '/' >
+               <Link to = {`/post/${post.id}`} >
               <p> {post.body} </p>
               <img src = {post.photoUrl} alt = '' className = {styles.postImg}></img>
                </Link>
