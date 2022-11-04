@@ -5,6 +5,7 @@ import axios from '/Users/thomasduckworth/Desktop/DogSports/client/src/api/axios
 import Login from './Login';
 import useAuth from '../../../../hooks/useAuth';
 import SignUpInfo from '../../../private/User/SignUpInfo';
+import styles from './Auth.module.css';
 
 
 
@@ -49,7 +50,7 @@ const Register = () => {
   }
 
   return (
-    <Form>
+    <Form className = {styles.container}>
       <h1> REGISTER </h1>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>

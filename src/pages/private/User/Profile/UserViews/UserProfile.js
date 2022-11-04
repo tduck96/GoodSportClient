@@ -130,14 +130,6 @@ const UserProfile = () => {
                      <Link to = {`/post/${post.id}`} ><p className = {styles.body}> {post.body} </p></Link>
                      
                      <img src = {post.photoUrl} alt = '' className = {styles.postImg}></img>
-                     
-                     
-                    
-              
-             
-              
-               
-              
               
             </ul>
          ))

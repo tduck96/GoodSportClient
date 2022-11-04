@@ -3,6 +3,7 @@ import {Button, Form } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '/Users/thomasduckworth/Desktop/DogSports/client/src/hooks/useAuth.js'
 import axios from '../../../../api/axios';
+import styles from './Auth.module.css';
 
 const Login = () => {
 
@@ -38,7 +39,7 @@ const Login = () => {
 }
 
   return (
-    <div>
+    <div className = {styles.container}>
       <h1> LOG IN</h1>
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
