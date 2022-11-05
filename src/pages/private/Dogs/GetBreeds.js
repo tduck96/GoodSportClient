@@ -9,6 +9,7 @@ const GetBreeds = ({breedSetter}) => {
         getBreeds();
     },[]);
 
+  
     const getBreeds = async () => {
         try {
             const response = await axios.get(`/breed`);

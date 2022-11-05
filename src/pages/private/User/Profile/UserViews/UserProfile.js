@@ -82,7 +82,7 @@ const UserProfile = () => {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                        <DropdownItem>
-                         <EditDog id = {dog.id} url = {dog.photoUrl} getProfileData = {getProfileData}/> 
+                         <EditDog dogid = {dog.id} url = {dog.photoUrl} getProfileData = {getProfileData}/> 
                          </DropdownItem>
                           <DropdownItem>
                             <DeleteDog id = {dog.id} getProfileData = {getProfileData}/>

@@ -16,4 +16,8 @@ flex-direction: column;
 }
 .dogThumbnail {
     width: 25%;
+
+}
+.modalContainer {
+    margin: 1rem;
 }
