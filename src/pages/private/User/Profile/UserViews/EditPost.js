@@ -9,6 +9,7 @@ import styles from './Edit.module.css'
 const EditPost = ({url, id, getProfileData}) => {
     const [show, setShow] = useState(false);
     const [body, setBody] = useState('');
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const {auth} = useAuth();

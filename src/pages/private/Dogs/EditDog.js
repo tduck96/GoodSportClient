@@ -10,7 +10,7 @@ import styles from './Dog.module.css'
 import GetBreeds from './GetBreeds';
 import EditForm from './EditForm';
 
-const EditDog = ({dogid, photoUrl}) => {
+const EditDog = ({dogid, url, getProfileData}) => {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -20,6 +20,9 @@ const EditDog = ({dogid, photoUrl}) => {
   const [breed, setBreed] = useState('');
   const [weight, setWeight] = useState('');
   const [about, setAbout] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const [newurl, setUrl] = useState(url);
 
 
   const {auth} = useAuth();
@@ -27,34 +30,41 @@ const EditDog = ({dogid, photoUrl}) => {
 
 useEffect(() => {
   console.log(breed);
-},[breed])
+},[breed]);
 
   const submitHandler = async (e) => {
   e.preventDefault();
     try {
       const response = await axios.put(`/dog/${dogid}`,
       {
-
         Id: dogid,
         Name: name,
         About: about,
-        PhotoUrl: photoUrl,
-        // Weight: weight,
+        PhotoUrl: newurl,
+        Weight: weight,
         BreedId: breed,
         userProfileId: auth.userId
 
       });
-      console.log(response.data);
+
+      getProfileData();
     }
     catch(err) {
       console.error(err);
     }
+    handleClose();
+    
+
   }
 
 
   return (
 
-<div onKeyDown={e => e.stopPropagation()}>
+<div 
+ onKeyDown={e => e.stopPropagation()}
+ onClick={e => e.stopPropagation()}
+ onFocus={e => e.stopPropagation()}
+ onMouseOver={e => e.stopPropagation()}>
 
     <Button variant="primary" onClick={handleShow} >
         Edit
@@ -78,6 +88,13 @@ useEffect(() => {
                 <Form.Control type="textarea" placeholder="About" onChange = {(e) => setAbout(e.target.value)} />
               </Form.Group>
               <GetBreeds breedSetter = {setBreed}/>
+
+              <PhotoUpload 
+              setUrl = {setUrl}
+              loading = {loading}
+              url = {url}
+              setLoading = {setLoading} 
+              />
              </Form>
 
         <Modal.Footer>
