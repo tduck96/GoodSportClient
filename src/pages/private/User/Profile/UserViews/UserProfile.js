@@ -12,7 +12,8 @@ import DeleteDog from '../../../Dogs/DeleteDog';
 import EditPost from './EditPost';
 import EditDog from '../../../Dogs/EditDog';
 import { Dropdown } from 'react-bootstrap';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem'
+import DogSports from '../../../Dogs/DogSports';
 
 
 const UserProfile = () => {
@@ -94,9 +95,14 @@ const UserProfile = () => {
           </ul>
         ))
       }  
+     
+      
 
 
       </div>
+
+      <DogSports />
+      
       <PostCreate getProfileData = {getProfileData} />
       <div className = {styles.wallContainer} >
       

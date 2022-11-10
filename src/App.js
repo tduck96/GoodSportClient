@@ -23,27 +23,18 @@ import ClubLayout from './pages/private/Clubs/ClubLayout';
 import ClubsByLocation from './pages/private/Clubs/ClubsByLocation';
 import ClubsBySport from './pages/private/Clubs/ClubsBySport';
 import HandlersBySport from './pages/private/Handlers/HandlersBySport';
-import SignUpInfo from './pages/private/User/SignUpInfo';
+import SignUpInfo from './pages/private/User/Profile/UserViews/SignUpInfo';
 import EditDog from './pages/private/Dogs/EditDog';
 import CreateDog from './pages/private/Dogs/CreateDog';
 import { useEffect } from 'react';
 import AddProfilePicture from './pages/private/User/Profile/UserViews/AddProfilePicture';
-import DogProfileForUser from './pages/private/Dogs/DogProfileForUser';
 import EditPost from './pages/private/User/Profile/UserViews/EditPost';
 import DeletePost from './pages/private/User/Profile/UserViews/DeletePost';
 import DeleteDog from './pages/private/Dogs/DeleteDog';
 import Post from './pages/private/User/Profile/UserViews/Post';
 
-
-
-
 function App() {
-
-
   return (
-
-  
-  
     <Routes>
      <Route path = '/' element = {<Layout />} >
       
@@ -68,7 +59,7 @@ function App() {
             <Route path = '/post/:id' element = {<Post />} />
             
             <Route path = '/dog/:id' element = {<Dog/> } />
-            <Route path = '/user/dog/:id' element = {<DogProfileForUser />} />
+            <Route path = '/user/dog/:id' element = {<Dog />} />
             <Route path = '/dog/editdog/:id' element = {<EditDog />} />
             <Route path = '/dog/deletedog/:id' element = {<DeleteDog />} />
             <Route path = '/dog/createdog/' element = {<CreateDog />} />
@@ -79,24 +70,19 @@ function App() {
             <Route path = '/handlers/sports/:id' element = {<HandlersBySport />} />
             <Route path = '/clubs/location/:id' element = {<ClubsByLocation />} />
             <Route path = '/handlers/location/:id' element = {<HandlersByLocation />} />
+            
 
           <Route path = '/handlers' element = {<HandlerLayout />}>
             <Route path = '/handlers' element = {<Handlers  />} />
+           
           </Route>
 
           <Route path = '/clubs' element = {<ClubLayout />}>
             <Route path = '/clubs' element = {<Clubs  />} />
-            
-           
           </Route>
-         
-          
         </Route>
       </Route>
       </Route>
-        
-
-     
     </Routes>
     
    

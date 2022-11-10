@@ -1,0 +1,29 @@
+.sportHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addSport {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(168, 168, 168);
+    padding: .7rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    width: 50px;
+    color: white;
+}
+.sportsContainer {
+    background-color: white;
+    box-sizing: border-box;
+    border: .02rem solid gray;
+    margin: 2rem;
+    border-radius: .5rem;
+}
+.sportContainer {
+   margin: 1rem;
+   
+}
+.subHeader {
+    margin: .5rem 2rem;
+}

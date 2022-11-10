@@ -19,11 +19,7 @@ const useRefreshToken = () => {
             refreshTok: response.data.refreshToken,
             id: response.data.id,
             userId: response.data.userId
-        }
-
-        
-          
-         );
+        });
 
          return response.data.token;
          

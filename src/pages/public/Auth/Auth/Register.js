@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from '/Users/thomasduckworth/Desktop/DogSports/client/src/api/axios.js'
 import Login from './Login';
 import useAuth from '../../../../hooks/useAuth';
-import SignUpInfo from '../../../private/User/SignUpInfo';
+import SignUpInfo from '../../../private/User/Profile/UserViews/SignUpInfo';
 import styles from './Auth.module.css';
 
 

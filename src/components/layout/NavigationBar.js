@@ -26,8 +26,8 @@ const NavigationBar = () => {
     <nav className = {styles.container}>
       <div class = {styles.leftNavItems}>
         <NavLink to ='/' className = {styles.navLink}>Home</NavLink>
-        <NavLink to ='/handlers' className = {styles.navLink}>Handler Directory</NavLink>
-        <NavLink to ='/clubs' className = {styles.navLink}>Club Directory</NavLink>
+        <NavLink to ='/handlers' className = {styles.navLink}>Handlers</NavLink>
+        <NavLink to ='/clubs' className = {styles.navLink}>Clubs</NavLink>
       </div>
 
       {

@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    margin: 2rem 3rem;
+}
+.buttons {
+    border: none;
+    background-color: rgb(36, 180, 10);
+    margin: 0 2rem;
+    border-radius: .6rem;
+    padding: .5rem;
+    color: white;
+}
+
+.buttons:hover {
+    background-color: rgb(27, 138, 7);
+}

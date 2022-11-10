@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom';
 import axios from '../../../api/axios';
 import styles from './Dog.module.css'
+import DogSports from './DogSports';
 const Dog = () => {
   const { id } = useParams();
   const [dogData, setDogData] = useState([]);
@@ -15,7 +16,6 @@ const Dog = () => {
       try {
         const response = await axios.get(`/dog/${id}`);
         setDogData([response.data])
-        setSportData(response.data.sports);
         console.log(response.data);
 
       } catch (err) {
@@ -31,20 +31,16 @@ const Dog = () => {
           <ul key = {dog.id} className = {styles.dogDetailsCard}>
             <img src = {dog.photoUrl} alt = {`${dog.name} thumbnail`} className={styles.dogThumbnail}></img>
             <h1> {dog.name} </h1>
+            <p> {dog.titles}</p>
+            <p>{dog.breedName}</p>
             <p>{dog.weight} (lbs)</p>
             <p>{dog.about}</p>
+           
           </ul>
         ))
       }
 
-      {
-        sportData.map(sport => (
-          <ul key = {sport.id}>
-            <li>{sport.name}</li>
-
-          </ul>
-        ))
-      }
+      <DogSports />
     </div>
   )
 }

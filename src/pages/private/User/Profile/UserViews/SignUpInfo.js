@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
-import axios from '../../../api/axios';
+import axios from '../../../../../api/axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../../../hooks/useAuth';
+import PhotoUpload from './PhotoUpload';
+import styles from './SignUpInfo.module.css'
+import { Button } from 'react-bootstrap';
 
 
 
@@ -71,12 +74,8 @@ useEffect(() => {
   
 }
 
-
- 
-
-
   return (
-    <div>
+    <div className = {styles.container}>
       <h1> Add some details! </h1>
       <div>
        <form>
@@ -103,20 +102,11 @@ useEffect(() => {
        
      </form>
 
-     <section>
-        <form method="post" encType="multipart/form-data" >
-          
-            <label for="file">Choose file to upload</label>
-            <input type="file"  id="file" name="file" multiple onChange={(e) => setFile(
-              e.target.files[0])
-                }
-               />
-          
-             <button onClick = {photoSubmit}>Upload</button>
-              <img src = {url} alt = 'uploaded img'></img> 
-        </form>
-  </section>
-  <button type = "submit" onClick = {submitHandler}>Save</button>
+    <PhotoUpload url = {url} setUrl = {setUrl}/>
+
+    <Button variant="primary" type="submit" onClick = {submitHandler} className = {styles.submitButton}>
+        Submit
+      </Button>
     </div>
     </div>
    

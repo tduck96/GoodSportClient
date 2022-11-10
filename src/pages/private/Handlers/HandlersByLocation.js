@@ -19,14 +19,19 @@ const getHandlersByLocation = async () => {
 return (
   <div className = {styles.handlersContainer}>
     {
-      handlers.map(handler => (
-          <ul key = {handler.id} className = {styles.handlerLists}>
-            <Link to = {`/handlers/${handler.id}`}>
-                <h1> {handler.name} </h1>
-            </Link>
-          </ul>
-      ))
-    }
+          handlers.map(handler => (
+            <ul key = {handler.id} className = {styles.handlerLists}>
+                <Link to = {`/handlers/${handler.id}`} className = {styles.navLink}>
+                  <img src = {handler.photoUrl} alt = '' className = {styles.photo}></img>
+                    <div key = {handler.id} className = {styles.details}>
+                    <h3> {handler.name} </h3>
+                    <p> {handler.location}</p>
+                    </div>
+                </Link>
+            </ul>
+          ))
+        }
+      
   </div>
 )
 }

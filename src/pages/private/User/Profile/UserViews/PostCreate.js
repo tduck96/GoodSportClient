@@ -5,6 +5,7 @@ import useAuth from '../../../../../hooks/useAuth';
 import UploadButton from './UploadButton';
 import styles from './PostCreate.module.css'
 import { Spinner } from 'react-bootstrap';
+import { Button } from 'react-bootstrap'
 
 
 const PostCreate = ({getProfileData}) => {
@@ -86,7 +87,11 @@ useEffect(() => {
               
              
              <section className = {styles.buttonSection}>
-             <button onClick = {postSubmit} className = {styles.createButton}>Create Post</button>
+
+             <Button variant="primary" type="submit" onClick = {postSubmit}>
+              Submit
+            </Button>
+
              </section>
              
              

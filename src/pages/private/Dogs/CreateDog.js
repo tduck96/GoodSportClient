@@ -10,6 +10,7 @@ const CreateDog = () => {
     const [breed, setBreed] = useState('');
     const [weight, setWeight] = useState();
     const [about, setAbout] = useState('');
+    const [titles, setTitles] = useState('');
 
     const [file, setFile] = useState('');
     const [url, setUrl] = useState('');
@@ -28,6 +29,7 @@ const CreateDog = () => {
         Weight: weight,
         About: about,
         PhotoUrl: url,
+        Titles: titles,
         userProfileId: auth.userId,
         locationId: 1,
         breedId: 1,
@@ -67,6 +69,13 @@ const CreateDog = () => {
        <label for="exampleFormControlInput1">Name</label>
        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Lucky Boy!" onChange={(e) => setName(e.target.value)} ></input>
      </div>
+
+     <div class="form-group">
+       <label for="exampleFormControlInput1">Titles</label>
+       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="CGC!" onChange={(e) => setTitles(e.target.value)} ></input>
+     </div>
+
+
 
      <div class="form-group">
          <label for="exampleFormControlSelect1">Location</label>
