@@ -5,9 +5,10 @@ import styles from './GetAllSports.module.css';
 import { Form } from 'react-bootstrap';
 
 
-const GetAllSports = ({dogid}) => {
+const GetAllSports = ({dogid, setSport}) => {
     const [sports, setSports] = useState([]);
     const [sportsToAdd, setSportsToAdd] = useState([]);
+   
     
 
     useEffect(() => {
@@ -42,7 +43,7 @@ const GetAllSports = ({dogid}) => {
     }
 
   return (
-    <Form.Select aria-label="Default select example">
+    <Form.Select aria-label="Default select example" onChange = {(e) => setSport(e.target.value)}>
     <option>Select Dog Breed:</option>
     
     {

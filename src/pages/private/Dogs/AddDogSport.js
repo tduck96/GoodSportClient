@@ -8,7 +8,7 @@ const AddDogSport = () => {
   return (
     <div>
       <label>Sports</label>
-      <DogSports    />
+      
 
     </div>
   )

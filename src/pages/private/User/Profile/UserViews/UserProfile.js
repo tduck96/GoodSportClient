@@ -64,11 +64,15 @@ const UserProfile = () => {
           </ul>
         ))
         } 
+
+
           <div className = {styles.dogsContainer}>
             <section className = {styles.dogHeader}>
             <h3 className = {styles.subHeader}> Dogs</h3>
             <Link to = '/dog/createdog' className = {styles.addDog}>+</Link>
             </section>
+
+            
         {
         dogInfo.map(dog => (
           <ul key = {dog.id} className = {styles.dogContainer}>
@@ -102,7 +106,7 @@ const UserProfile = () => {
       </div>
 
       <DogSports />
-      
+
       <PostCreate getProfileData = {getProfileData} />
       <div className = {styles.wallContainer} >
       

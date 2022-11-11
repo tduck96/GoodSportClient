@@ -6,11 +6,13 @@ import { Dropdown, DropdownItem } from 'react-bootstrap';
 import styles from './DogSport.module.css';
 import AddSport from './AddSport';
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
+import useAuth from '../../../hooks/useAuth';
+import DeleteSport from '../User/Profile/UserViews/DeleteSport';
 
 
 const DogSports = () => {
     const [sports, setSports] = useState([]);
-    const {id} = useParams();
+    const {auth} = useAuth();
 
     useEffect(() => {
         getSports();
@@ -18,7 +20,7 @@ const DogSports = () => {
 
     const getSports = async () => { 
         try {
-            const response = await axios.get(`/dog/sports/${id}`);
+            const response = await axios.get(`/user/${auth.userId}/sports`);
             console.log(response.data);
             setSports(response.data)
         }
@@ -28,12 +30,14 @@ const DogSports = () => {
     }
   return (
     <div>
-      {
+      
             <div className = {styles.sportsContainer}>
-            <section className = {styles.sportHeader} >
-            <h3 className = {styles.subHeader}> Sports </h3>
-            <AddSport />
-            </section>
+              <section className = {styles.sportHeader} >
+               <h3 className = {styles.subHeader}> Sports </h3>
+
+              <AddSport getSports = {getSports} />
+
+             </section>
         {
         sports.map(sport => (
           <ul key = {sport.id} className = {styles.sportContainer} >
@@ -41,15 +45,25 @@ const DogSports = () => {
               <img src = {sport.photoUrl} alt = '' className = {styles.sportPic}></img>
               <h3> {sport.name}</h3>
             </div>
+
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic" className = {styles.dropdown}>
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item>
+                  <DeleteSport getSports = {getSports} id = {sport.id}/>
+                </Dropdown.Item>          
+              </Dropdown.Menu>
+           </Dropdown>
           </ul>
         ))
       }  
             
-
+            
 
 
       </div>
-      }
+      
     </div>
   )
 }

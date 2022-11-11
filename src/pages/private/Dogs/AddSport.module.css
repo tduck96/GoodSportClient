@@ -1,0 +1,21 @@
+.addButton {
+    width: 50px;
+    padding: .7rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    background-color: rgb(168, 168, 168);
+    border: none;
+}
+
+.addButton:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.addButton:active {
+    background-color: rgb(168, 168, 168);
+}
+
+.addButton:hover {
+    background-color: rgb(168, 168, 168);
+}
