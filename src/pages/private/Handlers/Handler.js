@@ -5,6 +5,7 @@ import Locations from '../Filters/Locations';
 import axios from '../../../api/axios';
 
 import styles from '/Users/thomasduckworth/Desktop/DogSports/client/src/pages/private/User/Profile/UserViews/User.module.css'
+import HandlerSports from './HandlerSports';
 const Handler = () => {
   const { id } = useParams();
   const [profileInfo, setProfileInfo] = useState([]);
@@ -67,6 +68,10 @@ const Handler = () => {
         ))
       }  
        </div>
+
+       <HandlerSports />
+
+
 
        <div className = {styles.wallContainer} >
       

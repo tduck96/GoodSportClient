@@ -44,7 +44,7 @@ const GetAllSports = ({dogid, setSport}) => {
 
   return (
     <Form.Select aria-label="Default select example" onChange = {(e) => setSport(e.target.value)}>
-    <option>Select Dog Breed:</option>
+    <option>Select Sport:</option>
     
     {
       sports.map(sport => (

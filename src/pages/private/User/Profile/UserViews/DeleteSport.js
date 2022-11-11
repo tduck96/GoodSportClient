@@ -3,16 +3,18 @@ import { useState } from 'react';
 import axios from '../../../../../api/axios';
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import useAuth from '../../../../../hooks/useAuth';
 
 const DeleteSport = ({getSports, id}) => {
 
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
+    const {auth} = useAuth();
    
      const handleClose = async () => {
        try {
-          const response = await axios.delete(`/dog/${id}`);
-           console.log(2);
+          const response = await axios.delete(`/user/deletesport/${auth.userId}?sportId=${id}`);
+           console.log(response.data);
            
        }
        catch (err) {

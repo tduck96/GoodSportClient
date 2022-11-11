@@ -43,9 +43,9 @@ const postSport = async () => {
         <Modal.Header closeButton>
           <Modal.Title>Add Sport</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Add Sport</Modal.Body>
 
         <GetAllSports setSport = {setSport} />
+        
         <Modal.Footer>
 
           <Button variant="secondary" onClick={handleClose}>
