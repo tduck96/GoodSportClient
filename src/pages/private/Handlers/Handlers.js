@@ -33,8 +33,8 @@ const Handlers = () => {
               <Link to = {`/handlers/${handler.id}`} className = {styles.navLink}>
                 <img src = {handler.photoUrl} alt = '' className = {styles.photo}></img>
                   <div key = {handler.id} className = {styles.details}>
-                  <h3> {handler.name} </h3>
-                  <p> {handler.location}</p>
+                    <h3 className = {styles.details}>{handler.name} </h3>
+                    <p className = {styles.details}> {handler.location}</p>
                   </div>
               </Link>
           </ul>

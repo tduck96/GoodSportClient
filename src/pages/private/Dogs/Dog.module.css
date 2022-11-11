@@ -21,3 +21,6 @@ flex-direction: column;
 .modalContainer {
     margin: 1rem;
 }
+.details {
+    font-weight: 200;
+}

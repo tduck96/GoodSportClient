@@ -19,6 +19,7 @@
     border: .02rem solid gray;
     margin: 2rem;
     border-radius: .5rem;
+  
 }
 .sportContainer {
    margin: 1rem;
@@ -34,4 +35,16 @@
     width: 60px;
     border-radius: 50%;
     margin-right: .5rem;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: center;
+}
+.sportHeader {
+    margin: 1rem;
+    font-weight: 200;
+}
+.details {
+    font-weight: 200;
 }

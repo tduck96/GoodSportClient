@@ -38,10 +38,7 @@ section {
     overflow: hidden;
     margin: 2rem;
     padding: 2rem;
-    
-    
-   
-    
+ 
     
 }
 
@@ -61,4 +58,13 @@ section {
     width: 60px;
     border-radius: 50%;
     margin-right: .5rem;
+}
+.clubPhoto {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+.details {
+    font-weight: 200;
 }
