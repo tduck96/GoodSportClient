@@ -27,13 +27,18 @@ const Clubs = () => {
     <div className = {styles.clubsContainer}>      
       { clubs.map(club => (
         <ul key = {club.id} className = {styles.clubList}>
-            <Link to = {`/clubs/${club.id}`}><div key = {club.id}>
-              <h1> {club.name} </h1>
+            <Link to = {`/clubs/${club.id}`} className = {styles.navLink}>
+              <img src = {club.photoUrl} className = {styles.photo}></img>
+              <div key = {club.id} className = {styles.details}>
+              <h3> {club.name} </h3>
+              <p> {club.location} </p>
+              <p> Founded {club.founded} </p>
             </div>
             </Link>
         </ul>
         ))
       }
+
    </div>
   )
   

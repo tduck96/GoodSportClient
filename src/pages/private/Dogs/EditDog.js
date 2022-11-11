@@ -71,7 +71,7 @@ useEffect(() => {
  onMouseOver={e => e.stopPropagation()}>
 
     <Button variant="primary" onClick={handleShow} >
-        Edit
+        Edit Profile
       </Button>
 
       <Modal show={show} onHide={handleClose}>

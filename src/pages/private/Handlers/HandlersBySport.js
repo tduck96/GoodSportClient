@@ -15,7 +15,7 @@ const HandlersBySport = () => {
     }, []);
 
   const getHandlersBySport = async () => {
-    const response = await axios.get(`/sport/handlers/${id}`);
+    const response = await axios.get(`/sport/user/${id}`);
     setHandlers(response.data);
   }
 
@@ -23,13 +23,18 @@ const HandlersBySport = () => {
     <div className = {styles.handlersContainer}>
       {
         handlers.map(handler => (
-            <ul key = {handler.id} className = {styles.handlerLists}>
-              <Link to = {`/handlers/${handler.id}`}>
-                  <h1> {handler.name} </h1>
+          <ul key = {handler.id} className = {styles.handlerLists}>
+              <Link to = {`/handlers/${handler.id}`} className = {styles.navLink}>
+                <img src = {handler.photoUrl} alt = '' className = {styles.photo}></img>
+                  <div key = {handler.id} className = {styles.details}>
+                  <h3> {handler.name} </h3>
+                  <p> {handler.location}</p>
+                  </div>
               </Link>
-            </ul>
+          </ul>
         ))
       }
+      
     </div>
   )
 }

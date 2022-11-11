@@ -14,6 +14,7 @@ import EditDog from '../../../Dogs/EditDog';
 import { Dropdown } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem'
 import DogSports from '../../../Dogs/DogSports';
+import AddDogSport from '../../../Dogs/AddDogSport';
 
 
 const UserProfile = () => {
@@ -86,11 +87,17 @@ const UserProfile = () => {
                         <Dropdown.Toggle variant="secondary" id="dropdown-basic" className = {styles.dropdown}>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                       <DropdownItem>
+
+                         <DropdownItem>
                          <EditDog dogid = {dog.id} url = {dog.photoUrl} getProfileData = {getProfileData}/> 
                          </DropdownItem>
+
                           <DropdownItem>
                             <DeleteDog id = {dog.id} getProfileData = {getProfileData}/>
+                           </DropdownItem>
+
+                           <DropdownItem>
+                            <AddDogSport id = {dog.id} getProfileData = {getProfileData}/>
                            </DropdownItem>
                           
                         </Dropdown.Menu>

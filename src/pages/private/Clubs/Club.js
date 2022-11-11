@@ -36,6 +36,7 @@ console.log(sportData)
           <section className = {styles.headerDetailContainer}>
             <h1> {club.name} </h1>
             <p> {club.location}</p>
+            <p> {club.founded} </p>
           </section>
           <section className = {styles.headerDetailContainer}>
           <h2> About Us!</h2>
@@ -47,13 +48,7 @@ console.log(sportData)
     }
     <section className = {styles.headerDetailContainer}>
       <h1> Sports Available:</h1>
-    {
-      sportData.map(sport => (
-        <ul key = {sport.id}>
-            <p> {sport.name} </p>
-        </ul>
-      ))
-    }
+    
     </section>
     </div>
   )

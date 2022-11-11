@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { Button, Modal } from 'react-bootstrap';
-import axios from '../../../api/axios';
-import useAuth from '../../../hooks/useAuth';
-import GetAllSports from './GetAllSports';
+import axios from '../../../../../api/axios';
+import useAuth from '../../../../../hooks/useAuth';
+import GetAllSports from '../../../Dogs/GetAllSports';
 import styles from './AddSport.module.css'
 
 const AddSport = ({getSports}) => {

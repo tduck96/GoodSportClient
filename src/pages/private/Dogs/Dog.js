@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom';
 import axios from '../../../api/axios';
 import styles from './Dog.module.css'
+import DogSport from './DogSport';
 import DogSports from './DogSports';
 const Dog = () => {
   const { id } = useParams();
@@ -35,12 +36,13 @@ const Dog = () => {
             <p>{dog.breedName}</p>
             <p>{dog.weight} (lbs)</p>
             <p>{dog.about}</p>
-           
           </ul>
         ))
       }
 
-      <DogSports />
+      <DogSport />
+
+     
     </div>
   )
 }
