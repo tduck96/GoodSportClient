@@ -133,13 +133,13 @@ const UserProfile = () => {
                         <Dropdown.Toggle variant="secondary" id="dropdown-basic" className = {styles.dropdown}>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                       <DropdownItem>
+                       <Dropdown.Item>
                          <EditPost id = {post.id} url = {post.photoUrl} getProfileData = {getProfileData}/> 
-                         </DropdownItem>
-                          <DropdownItem>
+                         </Dropdown.Item>
+                          <Dropdown.Item>
                             <DeletePost id = {post.id} getProfileData = {getProfileData}/>
-                           </DropdownItem>
-                           <DropdownItem><Link to = {`/post/${post.id}`}>Comment</Link></DropdownItem>
+                           </Dropdown.Item>
+                           <Dropdown.Item><Link to = {`/post/${post.id}`}>Comment</Link></Dropdown.Item>
                         </Dropdown.Menu>
                      </Dropdown>
                      </section>
