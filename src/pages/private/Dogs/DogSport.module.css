@@ -42,9 +42,13 @@
     justify-content: center;
 }
 .sportHeader {
-    margin: 1rem;
+    margin: 0rem;
     font-weight: 200;
 }
 .details {
     font-weight: 200;
+}
+.dropdown {
+    background-color: rgb(152, 152, 152);
+    border: none;
 }
