@@ -12,7 +12,7 @@ import DeleteDog from '../../../Dogs/DeleteDog';
 import EditPost from './EditPost';
 import EditDog from '../../../Dogs/EditDog';
 import { Dropdown } from 'react-bootstrap';
-import { DropdownItem }from 'react-bootstrap'
+
 import DogSports from '../../../Dogs/DogSports';
 import AddDogSport from '../../../Dogs/AddDogSport';
 
@@ -88,17 +88,17 @@ const UserProfile = () => {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
 
-                         <DropdownItem>
+                         <Dropdown.Item>
                          <EditDog dogid = {dog.id} url = {dog.photoUrl} getProfileData = {getProfileData}/> 
-                         </DropdownItem>
+                         </Dropdown.Item>
 
-                          <DropdownItem>
+                          <Dropdown.Item>
                             <DeleteDog id = {dog.id} getProfileData = {getProfileData}/>
-                           </DropdownItem>
+                           </Dropdown.Item>
 
-                           <DropdownItem>
+                           <Dropdown.Item>
                             <AddDogSport id = {dog.id} getProfileData = {getProfileData}/>
-                           </DropdownItem>
+                           </Dropdown.Item>
                           
                         </Dropdown.Menu>
                      </Dropdown>
