@@ -13,7 +13,26 @@
     width: 60px;
     border-radius: 50%;
     margin-right: .5rem;
+    margin-bottom: .5rem;
 }
 .profileName {
     
+}
+.filtertitlecontainer {
+    background-color: rgba(222, 222, 222, 0.793);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.handlerContainer {
+    margin: 1rem;
+    border: 0.1px solid rgb(211, 211, 211);
+    border-radius: .4rem;
+}
+.details2 {
+    font-weight: 200;
+}
+.details {
+    font-weight: 200;
 }

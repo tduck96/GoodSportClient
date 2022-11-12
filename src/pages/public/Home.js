@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import useLogout from '../../hooks/useLogout'
 import logo from './dogsportlogored.png'
 import styles from './Home.module.css'
-import Buttons from './Buttons';
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -14,8 +14,14 @@ const Home = () => {
  
   return (
     
-    <div className = {styles.container}>
+    <div  >
+      <div className = {styles.container}>
       <img src = {logo} alt = 'logothumbnail' className = {styles.logo}></img>
+      
+      <Link to ='/handlers' className = {styles.links}> View Handlers</Link>
+      <Link to ='/clubs' className = {styles.links}>View  Clubs</Link>
+     
+      </div>
     </div>
   
   )

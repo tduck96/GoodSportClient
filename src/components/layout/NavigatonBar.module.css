@@ -10,6 +10,7 @@
 }
 .navLink a {
     color: white;
+    
 }
 a:hover {
     color: rgb(183, 181, 181)
@@ -18,6 +19,9 @@ a:hover {
 .navLink {
     padding: 1rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 400;
     color: white;
+}
+
+.btn-danger {
+    background-color: red;
 }

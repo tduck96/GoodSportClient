@@ -24,8 +24,9 @@ return (
                 <Link to = {`/handlers/${handler.id}`} className = {styles.navLink}>
                   <img src = {handler.photoUrl} alt = '' className = {styles.photo}></img>
                     <div key = {handler.id} className = {styles.details}>
-                    <h3> {handler.name} </h3>
+                    <h3 className = {styles.details}> {handler.name} </h3>
                     <p> {handler.location}</p>
+                    <p> {handler.bio}</p>
                     </div>
                 </Link>
             </ul>

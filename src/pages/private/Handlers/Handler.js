@@ -61,7 +61,7 @@ const Handler = () => {
             <Link to = {`/dog/${dog.id}`}>
             <div className = {styles.dogDetails}>
               <img src = {dog.photoUrl} alt = '' className = {styles.dogPic}></img>
-              <h3> {dog.name}</h3>
+              <h3 className = {styles.details}> {dog.name}</h3>
             </div>
             </Link>
           </ul>

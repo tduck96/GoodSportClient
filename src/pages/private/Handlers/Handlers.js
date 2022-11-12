@@ -34,7 +34,8 @@ const Handlers = () => {
                 <img src = {handler.photoUrl} alt = '' className = {styles.photo}></img>
                   <div key = {handler.id} className = {styles.details}>
                     <h3 className = {styles.details}>{handler.name} </h3>
-                    <p className = {styles.details}> {handler.location}</p>
+                    <p className = {styles.details2}> {handler.location}</p>
+                    <p>{handler.bio}</p>
                   </div>
               </Link>
           </ul>

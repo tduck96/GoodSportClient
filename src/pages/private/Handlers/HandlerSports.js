@@ -30,15 +30,17 @@ const HandlerSports = () => {
              <h3 className = {styles.subHeader}> Sports </h3>
          </section>
 
+          <section className ={styles.flexContainer}>
          {
         sports.map(sport => (
           <ul key = {sport.id} className = {styles.sportContainer} >
             <div className = {styles.sportDetails}>
               <img src = {sport.photoUrl} alt = '' className = {styles.sportPic}></img>
-              <h3> {sport.name}</h3>
+              <h3 className = {styles.details}> {sport.name}</h3>
             </div>
             </ul>
         ))}
+        </section>
 
     </div>
   </div>

@@ -65,7 +65,7 @@ useEffect(() => {
   return (
     <div>
       <section className = {styles.container}>
-        <form>
+        <form className = {styles.form}>
           <section className = {styles.inputSection}>
               <input type = "text" placeholder='Whats going on?' onChange= {(e) => setBody(e.target.value)} className = {styles.input}></input>
               <label className = {styles.customUpload}> +
@@ -88,7 +88,7 @@ useEffect(() => {
              
              <section className = {styles.buttonSection}>
 
-             <Button variant="primary" type="submit" onClick = {postSubmit}>
+             <Button variant="primary" type="submit" onClick = {postSubmit} className = {styles.submit}>
               Submit
             </Button>
 

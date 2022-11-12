@@ -2,9 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: .02rem solid gray;
-    background-color: rgb(0, 0, 0);
-    padding: .5rem;
+    margin-top: .5rem;
+    padding: 1rem;
 }
 a {
     color: inherit;
@@ -13,11 +12,16 @@ a {
     color: white;
 }
 .sportLink {
-    background-color: rgb(241, 38, 48);
-    padding: .4rem;
+    background-color: #dc3545;
+    padding: .7rem;
     margin: 0 .5rem;
     border-radius: .9rem;
+    font-weight: 200;
     color: white
+}
+.locationButton {
+    border-radius: .4rem;
+    
 }
 
 .LocationContainer {

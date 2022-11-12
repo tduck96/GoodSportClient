@@ -36,6 +36,7 @@ const Post = () => {
             <p className = {styles.name}><strong>{post.name}</strong></p>
           </section>
           <p className = {styles.postBody}> {post.body} </p>
+          <img src = {post.photoUrl} alt = 'postthumbnail' className = {styles.postPhoto}></img>
         </ul>
       ))}
       <PostControls id = {id} getPost = {getPostDetails}/>

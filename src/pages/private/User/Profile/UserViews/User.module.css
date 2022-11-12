@@ -64,10 +64,11 @@
     height: 115px;
     width: 115px;
     border-radius: 50%;
-    border: .08rem solid black
+    
 }
 .subHeader {
     margin: .5rem 2rem;
+    font-weight: 200;
 }
 .dogPic {
     height: 60px;
@@ -132,6 +133,7 @@ input[type="file"] {
 }
 .body {
     margin-top: 1rem;
+    font-weight: 200;
 }
 .profileName {
     font-size: 1.8rem;
@@ -148,4 +150,8 @@ input[type="file"] {
 .dogContainer {
     display: flex;
     justify-content: space-between;
+}
+
+.details {
+    font-weight: 200;
 }
