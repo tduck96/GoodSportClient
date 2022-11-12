@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Dropdown, DropdownItem } from 'react-bootstrap';
 import styles from './DogSport.module.css';
 import AddSport from '../User/Profile/UserViews/AddSport';
-import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
+import { DropdownMenu } from 'react-bootstrap/esm/DropdownMenu';
 import useAuth from '../../../hooks/useAuth';
 import DeleteSport from '../User/Profile/UserViews/DeleteSport';
 
