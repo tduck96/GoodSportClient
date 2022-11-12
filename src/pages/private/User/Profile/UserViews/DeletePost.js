@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/button'
 import Modal from 'react-bootstrap/Modal'
 import axios from '../../../../../api/axios';
 import styles from './Delete.module.css'
+
 const DeletePost = ({id, getProfileData}) => {
 
  const [show, setShow] = useState(false);
