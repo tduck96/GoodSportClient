@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap/button'
-import { Modal } from 'react-bootstrap/Modal'
+import { Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import axios from '../../../api/axios'
 
 const DeleteDog = ({id, getProfileData}) => {
