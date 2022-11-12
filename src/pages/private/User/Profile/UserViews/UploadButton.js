@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
-import Button from 'react-bootstrap/Button';
-import Spinner from 'react-bootstrap/Spinner';
+import { Button, Spinner } from 'react-bootstrap';
+
 
 
 const UploadButton = ({photoSubmit}) => {

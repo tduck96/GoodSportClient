@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form'
+import { Button, Modal, Form } from 'react-bootstrap';
 import axios from '../../../../../api/axios';
 import useAuth from '../../../../../hooks/useAuth';
 import styles from './Edit.module.css'

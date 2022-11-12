@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import Button from 'react-bootstrap/button'
-import Modal from 'react-bootstrap/Modal'
+import { Button, Modal } from 'react-bootstrap'
 import axios from '../../../../../api/axios';
 import styles from './Delete.module.css'
 
