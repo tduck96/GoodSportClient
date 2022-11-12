@@ -4,6 +4,7 @@ import axios from '../../../api/axios';
 import styles from './Dog.module.css'
 import DogSport from './DogSport';
 import DogSports from './DogSports';
+
 const Dog = () => {
   const { id } = useParams();
   const [dogData, setDogData] = useState([]);
