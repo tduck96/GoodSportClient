@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Button, Form } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
-import useAuth from '/Users/thomasduckworth/Desktop/DogSports/client/src/hooks/useAuth.js'
+import useAuth from '../../../../hooks/useAuth';
 import axios from '../../../../api/axios';
 import styles from './Auth.module.css';
 
