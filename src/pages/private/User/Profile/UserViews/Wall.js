@@ -22,6 +22,6 @@ const Wall = () => {
         </form>
     </section>
   )
-}
+  }
 
 export default Wall
