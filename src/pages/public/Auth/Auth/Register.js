@@ -1,7 +1,7 @@
 import {useState, useRef, useEffect} from 'react'
 import {Form, Button} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom'
-import axios from '/Users/thomasduckworth/Desktop/DogSports/client/src/api/axios.js'
+import axios from '../../../../api/axios';
 import Login from './Login';
 import useAuth from '../../../../hooks/useAuth';
 import SignUpInfo from '../../../private/User/Profile/UserViews/SignUpInfo';
