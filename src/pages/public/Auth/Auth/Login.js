@@ -28,10 +28,11 @@ const Login = () => {
 
         setAuth(response.data);
         setResult(response.data.success);
+        setErrorMsg(response.data.message)
         console.log(result)
         console.log(errorMsg);
         console.log(response.data)
-         navigate('/');
+        
 
       } catch (err) {
           setErrorMsg(err.response.data);
@@ -39,6 +40,9 @@ const Login = () => {
       }      
   }
     registerUser();
+
+     result === true ? navigate('/') : alert(errorMsg);
+
     setErrorMsg('');
 }
 
