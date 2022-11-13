@@ -10,6 +10,7 @@ const Login = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [result, setResult] = useState('')
 
   const { setAuth, auth } = useAuth();
   const navigate = useNavigate();
@@ -26,8 +27,10 @@ const Login = () => {
         });
 
         setAuth(response.data);
+        setResult(response.data.success);
+        console.log(errorMsg);
         console.log(response.data)
-        navigate('/');
+        // navigate('/');
 
       } catch (err) {
           setErrorMsg(err.response.data);
