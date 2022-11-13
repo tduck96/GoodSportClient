@@ -69,11 +69,11 @@ const Login = () => {
         <Form.Control type="password" placeholder="Password" className = {styles.inputs} onChange={(e) => setPassword(e.target.value)} />
       </Form.Group> 
         
-      <Button variant="primary" type="submit" onClick = {submitHandler}>
+      <Button variant="primary" type="submit" onClick = {submitHandler} className = {styles.but}>
         Submit
       </Button>
       <br/>
-      <Link to ='/Register'> Register Today</Link>
+      <Link to ='/Register' className = {styles.register}> Register Today</Link>
     </Form>
     
     

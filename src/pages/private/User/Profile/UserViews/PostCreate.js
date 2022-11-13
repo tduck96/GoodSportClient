@@ -41,8 +41,11 @@ useEffect(() => {
         }
       }
 
-      const postSubmit = async (e) => {
-        e.preventDefault();
+      const postSubmit = (e) => {
+        
+        setBody('')
+
+        const submitPost = async () => {
         try {
             const response = await axios.post(`/wallpost/${auth.userId}`,
             {
@@ -55,11 +58,14 @@ useEffect(() => {
             console.error(err);
         }
 
-        setUrl();
+        setUrl('');
         setBody('');
         setFile('');
        
         getProfileData();
+      }
+
+      submitPost();
 
       }
   return (
