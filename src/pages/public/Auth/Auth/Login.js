@@ -32,18 +32,21 @@ const Login = () => {
         
         console.log(response.data)
         
-        
+        if (result === true)  navigate('/');
+        else {
+          alert("Invalid Combination Try Again")
+        }
 
       } catch (err) {
-          setErrorMsg(err.response.data);
-          alert(err.response.data);
+        
+          
       }      
   }
     registerUser();
     console.log(result)
     console.log(errorMsg);
 
-    result === true ? navigate('/') : alert(errorMsg);
+   
 
     
 
