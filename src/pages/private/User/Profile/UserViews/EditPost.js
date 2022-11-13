@@ -26,7 +26,13 @@ const EditPost = ({url, id, getProfileData}) => {
     }
 
 return (
-    <>
+
+  <div
+  onKeyDown={e => e.stopPropagation()}
+  onClick={e => e.stopPropagation()}
+  onFocus={e => e.stopPropagation()}
+  onMouseOver={e => e.stopPropagation()} >
+
       <Button variant="primary" onClick={handleShow} className = {styles.edit}>
         Edit
       </Button>
@@ -52,7 +58,8 @@ return (
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    
+    </div>
   )
 }
 
