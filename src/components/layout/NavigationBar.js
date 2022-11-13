@@ -33,10 +33,10 @@ const NavigationBar = () => {
           <NavLink to ='/' className = {styles.navLink}>Home</NavLink>
         } 
 
-        <NavLink to ='/' className = {styles.navLink}>Home</NavLink>
+       
         <NavLink to ='/handlers' className = {styles.navLink}>Handlers</NavLink>
         <NavLink to ='/clubs' className = {styles.navLink}>Clubs</NavLink>
-        
+
       </div>
 
       {
