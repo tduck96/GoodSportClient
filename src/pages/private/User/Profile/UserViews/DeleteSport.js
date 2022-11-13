@@ -14,7 +14,6 @@ const DeleteSport = ({getSports, id}) => {
      const handleClose = async () => {
        try {
           const response = await axios.delete(`/user/deletesport/${auth.userId}?sportId=${id}`);
-           console.log(response.data);
            
        }
        catch (err) {

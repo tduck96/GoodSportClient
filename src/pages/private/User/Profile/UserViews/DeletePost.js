@@ -11,7 +11,7 @@ const DeletePost = ({id, getProfileData}) => {
   const handleClose = async () => {
     try {
         const response = await axios.delete(`/wallpost/${id}`);
-        console.log(response.data);
+        
         
     }
     catch (err) {

@@ -65,7 +65,7 @@ useEffect(() => {
       const response = await axios.post(`/profile/addprofilepic/`, 
        data
        );
-      console.log(response.data)
+     
       setUrl(response.data);
       }
    catch (err) {

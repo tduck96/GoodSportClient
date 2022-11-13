@@ -11,7 +11,6 @@ const DeleteDog = ({id, getProfileData}) => {
   const handleClose = async () => {
     try {
         const response = await axios.delete(`/dog/${id}`);
-        console.log(response.data);
         
     }
     catch (err) {

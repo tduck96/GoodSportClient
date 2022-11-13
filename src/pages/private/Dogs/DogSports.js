@@ -21,7 +21,6 @@ const DogSports = () => {
     const getSports = async () => { 
         try {
             const response = await axios.get(`/user/${auth.userId}/sports`);
-            console.log(response.data);
             setSports(response.data)
         }
         catch(err) {
@@ -32,8 +31,8 @@ const DogSports = () => {
     <div>
       
             <div className = {styles.sportsContainer}>
-              <section className = {styles.sportHeader} >
-               <h3 className = {styles.subHeader}> Sports </h3>
+              <section className = {styles.sportHeader2} >
+               <h3 className = {styles.subHeader2}> Sports </h3>
 
               <AddSport getSports = {getSports} />
 

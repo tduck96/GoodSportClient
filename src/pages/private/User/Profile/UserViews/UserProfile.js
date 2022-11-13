@@ -15,6 +15,7 @@ import { Dropdown } from 'react-bootstrap';
 
 import DogSports from '../../../Dogs/DogSports';
 import AddDogSport from '../../../Dogs/AddDogSport';
+import EditProfile from './EditProfile';
 
 
 const UserProfile = () => {
@@ -35,7 +36,7 @@ const UserProfile = () => {
 
     try {
       const response = await axios.get(`user/profile/${id}`);
-      console.log(response.data);
+   
       setProfileInfo([response.data]);
       setDogInfo(response.data.dogs);
       setWallPosts(response.data.wallPosts);
@@ -60,7 +61,14 @@ const UserProfile = () => {
               <h2 className = {styles.profileName}> {info.name} </h2>
               <p className = {styles.info}> {info.bio} </p>
               <p className = {styles.location}>{info.location.name}</p>
-              <Link to = '/user/updateprofile'>Update</Link>
+
+              <EditProfile
+              id = {info.id}
+              url = {info.photoUrl}
+              getProfileData = {getProfileData}
+
+              /> 
+
             </div>
           </ul>
         ))

@@ -14,7 +14,6 @@ const GetBreeds = ({breedSetter}) => {
         try {
             const response = await axios.get(`/breed`);
             setBreeds(response.data);
-            console.log(response.data)
 
         }
         catch (err) {

@@ -48,9 +48,6 @@ const Locations = () => {
 
   return (
     <div className = {styles.LocationContainer}>
-    {/* //     <label for = "locations"> Choose Location : </label>
-    //     <select name="locations" id="locations" onChange={changeHandler}>
-    //       <option value = "0">Select:</option> */}
 
       <DropdownButton id="dropdown-basic-button" variant="danger"  title="Sort by Location" className = {styles.locationButton}>
         {

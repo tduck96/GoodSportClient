@@ -19,7 +19,6 @@ const GetAllSports = ({dogid, setSport}) => {
         
         try {
             const response = await axios.get(`/sport`);
-            console.log(response.data);
             setSports(response.data);
             
         }

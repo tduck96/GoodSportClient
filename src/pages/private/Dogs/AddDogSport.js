@@ -24,7 +24,6 @@ const AddDogSport = ({getProfileData, id}) => {
 const postSport = async () => {
     try {
       const response = await axios.post(`/dog/${id}/addsport?sportsId=${sport}`);
-      console.log(response.data);
     }
     catch (err) {
       console.error(err);

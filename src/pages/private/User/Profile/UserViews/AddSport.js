@@ -23,7 +23,6 @@ const AddSport = ({getSports}) => {
 const postSport = async () => {
     try {
       const response = await axios.post(`/user/${auth.userId}/addsport?sportsId=${sport}`);
-      console.log(response.data);
     }
     catch (err) {
       console.error(err);

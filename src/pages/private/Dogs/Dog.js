@@ -18,7 +18,7 @@ const Dog = () => {
       try {
         const response = await axios.get(`/dog/${id}`);
         setDogData([response.data])
-        console.log(response.data);
+        
 
       } catch (err) {
         console.error(err);

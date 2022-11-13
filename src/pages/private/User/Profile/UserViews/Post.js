@@ -19,7 +19,6 @@ const Post = () => {
     const getPostDetails = async () => {
         try { 
             const response = await axios.get(`/wallpost/${id}`);
-            console.log(response.data)
             setPostDetails([response.data])
             setComments(response.data.comments)
          } 

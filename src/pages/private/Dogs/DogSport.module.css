@@ -49,6 +49,14 @@
     display: flex;
     align-items: center;
 }
+.subHeader2 {
+    font-weight: 200;
+    margin: .5rem 2rem;
+}
+.sportHeader2{
+    display: flex;
+    justify-content: space-between;
+}
 
 .sportDetails2 {
 

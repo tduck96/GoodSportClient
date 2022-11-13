@@ -16,7 +16,6 @@ const DogSport = () => {
     const getSports = async () => { 
         try {
             const response = await axios.get(`/dog/sports/${id}`);
-            console.log(response.data);
             setSports(response.data)
         }
         catch(err) {

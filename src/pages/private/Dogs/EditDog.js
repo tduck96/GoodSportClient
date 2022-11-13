@@ -50,7 +50,6 @@ useEffect(() => {
         userProfileId: auth.userId
 
       });
-      console.log(response.data)
       getProfileData();
     }
     catch(err) {

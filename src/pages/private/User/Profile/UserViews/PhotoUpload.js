@@ -30,8 +30,8 @@ const PhotoUpload = ({setUrl, loading, setLoading, url}) => {
           setUrl(response.data);
           setImgLoad(true);
          
-    
          }
+         
       catch (err) {
          console.error(err);
      }

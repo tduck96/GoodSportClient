@@ -49,7 +49,7 @@ useEffect(() => {
                 Body: body,
                 photoUrl: url
             })
-            console.log(response.data);
+          
         } 
         catch(err) {
             console.error(err);

@@ -15,7 +15,7 @@ const PostControls = ({id, getPost}) => {
             const response = await axios.post(`/comment?userProfileId=${auth.userId}&wallPostID=${id}`, {
                 body: body   
             })
-            console.log(response.data)
+            
             getPost();
             setBody('')
             
