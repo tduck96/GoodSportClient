@@ -9,7 +9,7 @@ const Sports = () => {
 
     useEffect(() => {
         getSports();
-    })
+    }, []);
 
     const getSports = async () => {
         try {
