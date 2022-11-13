@@ -27,6 +27,7 @@ const Login = () => {
         });
 
         console.log(response.data)
+        console.log(response.data.success)
         setAuth(response.data);
         setResult(response.data.success);
         setErrorMsg(response.data.message)
