@@ -1,6 +1,5 @@
 .handlersContainer {
-    width: 100%;
-  
+    margin: 1rem;
 }
 .handlerLists {
     padding: 1.5rem;
@@ -51,6 +50,10 @@
      .handlerContainer {
         margin-top: 2rem;
     } 
+
+    .handlersContainer {
+        margin: 2rem 4rem;
+    }
     }
 
  @media only screen and (min-width: 950px) {
@@ -60,6 +63,9 @@
          .handlerContainer {
             margin-top: 2rem;
         } 
+        .handlersContainer {
+            margin: 3rem 5rem;
+        }
         }
 
   @media only screen and (min-width: 1200px) {
@@ -69,4 +75,8 @@
         .handlerContainer {
             margin-top: 2rem;
          } 
+
+         .handlersContainer {
+            margin: 3rem 9rem;
+        }
      }

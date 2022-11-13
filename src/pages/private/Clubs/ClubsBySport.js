@@ -16,7 +16,7 @@ const ClubsBySport = () => {
     setClubs(response.data);
   }
   return (
-    <div className = {styles.clubsContainer}>
+    <div className = {styles.clubsFilContainer}>
     { clubs.map(club => (
         <ul key = {club.id} className = {styles.clubList}>
             <Link to = {`/clubs/${club.id}`} className = {styles.navLink}>
