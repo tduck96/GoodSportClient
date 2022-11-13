@@ -50,11 +50,6 @@ const EditProfile = ({url, getProfileData}) => {
 
    }
 
-  
-
-
-
-
   return (
     
       <div 
