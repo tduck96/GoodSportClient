@@ -102,8 +102,8 @@ useEffect(() => {
 
               <GetBreeds breedSetter = {setBreed}/>
 
-              <AddDogSport />
-              <GetAllSports dogid = {dogid} />
+              {/* <AddDogSport />
+              <GetAllSports dogid = {dogid} /> */}
 
 
               <PhotoUpload 
