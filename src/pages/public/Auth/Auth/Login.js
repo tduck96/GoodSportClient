@@ -28,6 +28,7 @@ const Login = () => {
 
         setAuth(response.data);
         setResult(response.data.success);
+        console.log(result)
         console.log(errorMsg);
         console.log(response.data)
         // navigate('/');
