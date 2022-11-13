@@ -41,10 +41,10 @@ const Login = () => {
   return (
     <div className = {styles.container}>
       <h1> LOG IN</h1>
-    <Form>
+    <Form className = {styles.formContainer}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" onChange={(e) => setUserName(e.target.value)} />
+        <Form.Control type="email" placeholder="Enter email" className = {styles.inputs} onChange={(e) => setUserName(e.target.value)} />
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
@@ -52,7 +52,7 @@ const Login = () => {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+        <Form.Control type="password" placeholder="Password" className = {styles.inputs} onChange={(e) => setPassword(e.target.value)} />
       </Form.Group> 
         
       <Button variant="primary" type="submit" onClick = {submitHandler}>

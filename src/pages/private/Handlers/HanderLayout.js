@@ -5,7 +5,7 @@ import styles from './Handler.module.css'
 
 const HandlerLayout = () => {
     return (
-      <main className = "App">
+      <main className = {styles.app}>
         <Sports />
         <div className = {styles.handlerContainer}>
           <section className = {styles.filtertitlecontainer}>

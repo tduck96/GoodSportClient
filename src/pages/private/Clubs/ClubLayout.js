@@ -4,7 +4,7 @@ import Sports from "../Filters/Sports"
 import styles from './Clubs.module.css'
 const ClubLayout = () => {
   return (
-      <main className = "App">
+      <main className = {styles.app}>
           <Sports />
           <div className = {styles.handlerContainer}>
           <section className = {styles.filtertitlecontainer}>
