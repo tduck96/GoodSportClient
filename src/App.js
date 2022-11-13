@@ -32,7 +32,7 @@ import EditPost from './pages/private/User/Profile/UserViews/EditPost';
 import DeletePost from './pages/private/User/Profile/UserViews/DeletePost';
 import DeleteDog from './pages/private/Dogs/DeleteDog';
 import Post from './pages/private/User/Profile/UserViews/Post';
-import HomeLoggedIn from './pages/private/HomeLoggedIN';
+import HomeLoggedIn from './pages/private/HomeLoggedIn';
 
 function App() {
   return (
