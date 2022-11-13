@@ -32,6 +32,7 @@ import EditPost from './pages/private/User/Profile/UserViews/EditPost';
 import DeletePost from './pages/private/User/Profile/UserViews/DeletePost';
 import DeleteDog from './pages/private/Dogs/DeleteDog';
 import Post from './pages/private/User/Profile/UserViews/Post';
+import HomeLoggedIn from './pages/private/HomeLoggedIN';
 
 function App() {
   return (
@@ -47,8 +48,9 @@ function App() {
         <Route path = '/createprofile/:id' element = {<SignUpInfo />} />
       
       <Route element ={<PersistLogin />} >
-      <Route path = '/' element = {<Home />}></Route>
         <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
+
+             <Route path = '/home' element = {<HomeLoggedIn />}></Route>
             
 
             <Route path = '/user/viewprofile' element = {<UserProfile />} />

@@ -32,7 +32,7 @@ const Login = () => {
 
       if (response.data.success === true) 
       
-        navigate('/')   
+        navigate('/home')   
       
       else 
 
