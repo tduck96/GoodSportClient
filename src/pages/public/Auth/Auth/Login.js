@@ -32,7 +32,7 @@ const Login = () => {
         
         console.log(response.data)
         
-        result === true ? navigate('/') : alert(errorMsg);
+        
 
       } catch (err) {
           setErrorMsg(err.response.data);
@@ -42,6 +42,8 @@ const Login = () => {
     registerUser();
     console.log(result)
     console.log(errorMsg);
+
+    result === true ? navigate('/') : alert(errorMsg);
 
     
 
