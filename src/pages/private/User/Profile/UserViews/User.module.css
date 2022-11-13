@@ -1,9 +1,9 @@
 .container {
     box-sizing: border-box;
     flex-direction: column;
-    width: 100%;
     overflow: hidden;
     background-color: rgba(242, 242, 242, 0.793);
+   
 }
 
 .headerContainer {
@@ -155,3 +155,54 @@ input[type="file"] {
 .details {
     font-weight: 200;
 }
+.dogDetails {
+    font-weight: 200;
+}
+.comLink {
+    margin-left: .7rem;
+}
+
+
+.clubsFilContainer {
+    margin: 2rem 4rem;
+}
+
+@media only screen and (min-width: 650px) {
+    .headerContainer {
+        margin: 2rem 10rem;
+    }
+    .dogsContainer {
+         margin: 2rem 10rem;
+        }
+
+    .wallContainer {
+        margin: 2rem 10rem
+    }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        .headerContainer {
+            margin: 4rem 15rem;
+        }
+        .dogsContainer {
+             margin: 4rem 15rem;
+            }
+    
+        .wallContainer {
+            margin: 4rem 15rem;
+        }
+        }
+
+        @media only screen and (min-width: 1300px) {
+            .headerContainer {
+                margin: 6rem 18rem;
+            }
+            .dogsContainer {
+                 margin: 6rem 18rem;
+                }
+        
+            .wallContainer {
+                margin: 6rem 18rem;
+            }
+            }
+    

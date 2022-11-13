@@ -32,7 +32,7 @@ const DogSport = () => {
         {
       sports.map(sport => (
           <ul key = {sport.id} className = {styles.sportContainer} >
-            <div className = {styles.sportDetails}>
+            <div className = {styles.sportDetails2}>
               <img src = {sport.photoUrl} alt = '' className = {styles.sportPic}></img>
               <h3 className = {styles.details}> {sport.name}</h3>
             </div>

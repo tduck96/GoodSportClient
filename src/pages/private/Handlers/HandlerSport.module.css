@@ -50,3 +50,24 @@
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (min-width: 650px) {
+    .sportsContainer {
+        margin: 2rem 10rem;
+    }
+   
+    }
+
+@media only screen and (min-width: 1000px) {
+        .sportsContainer {
+            margin: 4rem 15rem
+        }
+       
+        }
+@media only screen and (min-width: 1300px) {
+            .sportsContainer {
+                margin: 6rem 18rem;
+            }
+        }
+      
+    

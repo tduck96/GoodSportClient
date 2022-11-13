@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: .5rem 2rem;
 }
 .addSport {
     display: flex;
@@ -34,7 +35,7 @@
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    margin-right: .5rem;
+    margin-right: 1rem;
 }
 
 .flexContainer {
@@ -44,6 +45,14 @@
 .sportHeader {
     font-weight: 200;
 }
+.sportDetails {
+    display: flex;
+    align-items: center;
+}
+
+.sportDetails2 {
+
+}
 .details {
     font-weight: 200;
 }
@@ -51,3 +60,24 @@
     background-color: rgb(152, 152, 152);
     border: none;
 }
+.sportContainer {
+    margin: 1rem;
+}
+@media only screen and (min-width: 650px) {
+    .sportsContainer {
+        margin: 2rem 10rem;
+    }
+   
+    }
+
+@media only screen and (min-width: 1000px) {
+        .sportsContainer {
+            margin: 4rem 15rem
+        }
+       
+        }
+@media only screen and (min-width: 1300px) {
+            .sportsContainer {
+                margin: 6rem 18rem;
+            }
+        }

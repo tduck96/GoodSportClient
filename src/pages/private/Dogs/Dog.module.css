@@ -24,3 +24,25 @@ flex-direction: column;
 .details {
     font-weight: 200;
 }
+
+@media only screen and (min-width: 650px) {
+    .dogDetailsCard {
+        margin: 2rem 10rem;
+    }
+    
+    }
+
+    @media only screen and (min-width: 1000px) {
+        .dogDetailsCard {
+            margin: 4rem 15rem;
+        }
+      
+        }
+
+        @media only screen and (min-width: 1300px) {
+            .dogDetailsCard {
+                margin: 6rem 18rem;
+            }
+          
+            }
+    

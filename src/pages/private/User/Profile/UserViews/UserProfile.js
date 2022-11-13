@@ -80,7 +80,7 @@ const UserProfile = () => {
             <Link to = {`/user/dog/${dog.id}`}>
             <div className = {styles.dogDetails}>
               <img src = {dog.photoUrl} alt = '' className = {styles.dogPic}></img>
-              <h3> {dog.name}</h3>
+              <h3 className = {styles.details}> {dog.name}</h3>
             </div>
             </Link>
             <Dropdown>
@@ -139,7 +139,7 @@ const UserProfile = () => {
                           <Dropdown.Item>
                             <DeletePost id = {post.id} getProfileData = {getProfileData}/>
                            </Dropdown.Item>
-                           <Dropdown.Item><Link to = {`/post/${post.id}`}>Comment</Link></Dropdown.Item>
+                           <Dropdown.Item><Link to = {`/post/${post.id}`} className = {styles.comLink}>Comment</Link></Dropdown.Item>
                         </Dropdown.Menu>
                      </Dropdown>
                      </section>
