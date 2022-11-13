@@ -31,11 +31,11 @@ const Login = () => {
         setErrorMsg(response.data.message)
         
         console.log(response.data)
-        
-        if (result === true)  navigate('/');
-        else {
-          alert("Invalid Combination Try Again")
-        }
+        console.log(result);
+        // if (result === true)  navigate('/');
+        // else {
+        //   alert("Invalid Combination Try Again")
+        // }
 
       } catch (err) {
         
