@@ -26,34 +26,31 @@ const Login = () => {
           Password: password
         });
 
-        console.log(response.data)
-        console.log(response.data.success)
-        setAuth(response.data);
         setResult(response.data.success);
-        setErrorMsg(response.data.message)
+        setAuth(response.data);
+       
+
+      if (response.data.success === true) 
+      
+        navigate('/')   
+      
+      else 
+
+         alert(response.data.message) 
         
-        // console.log(response.data)
-        // console.log(result);
-        // if (result === true)  navigate('/');
-        // else {
-        //   alert("Invalid Combination Try Again")
-        // }
+
+        
 
       } catch (err) {
-        
-          
+          setErrorMsg(err.response.data);
+          alert(err.response.data);
       }      
   }
     registerUser();
-    // console.log(result)
-    // console.log(errorMsg);
-
-   
-
-    
-
     setErrorMsg('');
+    
 }
+
 
   return (
     <div className = {styles.container}>
