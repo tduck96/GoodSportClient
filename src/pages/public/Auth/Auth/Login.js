@@ -31,8 +31,8 @@ const Login = () => {
         setResult(response.data.success);
         setErrorMsg(response.data.message)
         
-        console.log(response.data)
-        console.log(result);
+        // console.log(response.data)
+        // console.log(result);
         // if (result === true)  navigate('/');
         // else {
         //   alert("Invalid Combination Try Again")
@@ -44,8 +44,8 @@ const Login = () => {
       }      
   }
     registerUser();
-    console.log(result)
-    console.log(errorMsg);
+    // console.log(result)
+    // console.log(errorMsg);
 
    
 
