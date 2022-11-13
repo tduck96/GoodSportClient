@@ -47,8 +47,9 @@ function App() {
         <Route path = '/createprofile/:id' element = {<SignUpInfo />} />
       
       <Route element ={<PersistLogin />} >
+      <Route path = '/' element = {<Home />}></Route>
         <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
-            <Route path = '/home' element = {<Home />}></Route>
+            
 
             <Route path = '/user/viewprofile' element = {<UserProfile />} />
             <Route path = '/user/updateprofile/' element = {<UpdateProfile />} />
