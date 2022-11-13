@@ -25,9 +25,18 @@ const NavigationBar = () => {
   return (
     <nav className = {styles.container}>
       <div class = {styles.leftNavItems}>
+
+        {
+          auth?.token ? 
+          <NavLink to ='/home' className = {styles.navLink}>Home</NavLink>
+          :
+          <NavLink to ='/' className = {styles.navLink}>Home</NavLink>
+        } 
+
         <NavLink to ='/' className = {styles.navLink}>Home</NavLink>
         <NavLink to ='/handlers' className = {styles.navLink}>Handlers</NavLink>
         <NavLink to ='/clubs' className = {styles.navLink}>Clubs</NavLink>
+        
       </div>
 
       {
