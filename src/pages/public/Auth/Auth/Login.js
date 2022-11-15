@@ -37,21 +37,22 @@ const Login = () => {
       
         navigate('/')  
         setValue('Submit') 
-      
-      else 
+      }
+      else {
 
          alert(response.data.message) 
+      }
       
       } catch (err) {
           setErrorMsg(err.response.data);
           alert(err.response.data);
       }      
-  }
+  
     registerUser();
     setErrorMsg('');
     
 }
-
+}
 
   return (
     <div className = {styles.container}>
@@ -81,5 +82,6 @@ const Login = () => {
     </div>
   )
 }
+
 
 export default Login
