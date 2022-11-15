@@ -73,7 +73,7 @@ const Login = () => {
       </Form.Group> 
         
       <Button variant="primary" type="submit" onClick = {submitHandler} className = {styles.but}>
-        {submitValue}
+       Submit
       </Button>
       <br/>
       <Link to ='/Register' className = {styles.register}> Register Today</Link>
