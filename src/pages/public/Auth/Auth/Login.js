@@ -20,7 +20,7 @@ const Login = () => {
   const submitHandler = (e) => {
 console.log('clicked')
     e.preventDefault();
-    // setValue(<SpinnerForUpload />)
+    setValue(<SpinnerForUpload />)
 
     const registerUser = async () => {
 
@@ -33,6 +33,7 @@ console.log('clicked')
 
         if (response.data.success === true)  {
           navigate('/home')  
+          setValue('Submit')
          }
         else {
         alert(response.data.message) 
@@ -74,7 +75,7 @@ console.log('clicked')
       </Form.Group> 
         
       <Button variant="primary" type="submit" onClick = {submitHandler} className = {styles.but}>
-       Submit
+       {submitValue}
       </Button>
       <br/>
       <Link to ='/Register' className = {styles.register}> Register Today</Link>
