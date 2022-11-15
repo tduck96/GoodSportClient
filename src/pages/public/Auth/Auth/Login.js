@@ -18,8 +18,9 @@ const Login = () => {
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
+
     e.preventDefault();
-    setValue(<SpinnerForUpload />)
+    // setValue(<SpinnerForUpload />)
 
     const registerUser = async () => {
 
@@ -48,10 +49,10 @@ const Login = () => {
           alert(err.response.data);
       }      
   
-    registerUser();
     setErrorMsg('');
+    registerUser();
     
-}
+  }
 }
 
   return (
