@@ -18,7 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
-
+console.log('clicked')
     e.preventDefault();
     // setValue(<SpinnerForUpload />)
 
