@@ -1,19 +1,22 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react'
-import styles from './PhotoUpload.module.css'
-import axios from '../../../../../api/axios'
-import Spin from '../../../../../components/layout/Spin'
+import React from 'react';
+import { useState, useEffect, useRef } from 'react';
+import styles from './PhotoUpload.module.css';
+import axios from '../../../../../api/axios';
+import Spin from '../../../../../components/layout/Spin';
+import SpinnerForUpload from '../../../../../components/SpinnerForUpload';
+import UploadIcon from '../../../../../components/UploadIcon';
+import uploadicon from './upload.png';
 
 const PhotoUpload = ({setUrl, loading, setLoading, url}) => {
 
     const [file, setFile] = useState('')
     const isMounted = useRef(false);
-    const [changer, setChanger] = useState('+');
+    const [changer, setChanger] = useState(<UploadIcon />);
     const [imgLoad, setImgLoad] = useState(false);
 
     useEffect(() => {
       photoSubmit();
-      setChanger('.. loading')
+      setChanger(<SpinnerForUpload />)
     }, [file]);
 
 
@@ -35,7 +38,7 @@ const PhotoUpload = ({setUrl, loading, setLoading, url}) => {
       catch (err) {
          console.error(err);
      }
-     setChanger('+');
+     setChanger(<UploadIcon />);
    }
 
   return (

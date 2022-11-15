@@ -12,28 +12,59 @@ import GetBreeds from './GetBreeds';
 import AddDogSport from './AddDogSport';
 import GetAllSports from './GetAllSports';
 
-const EditDog = ({dogid, url, getProfileData}) => {
+const EditDog = ({dogid, url, getProfileData, dog}) => {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
-  const [name, setName] = useState('');
-  const [breed, setBreed] = useState('');
-  const [weight, setWeight] = useState('');
-  const [titles, setTitles] = useState('');
-  const [about, setAbout] = useState('');
+  const [name, setName] = useState();
+  const [breed, setBreed] = useState();
+  const [weight, setWeight] = useState();
+  const [titles, setTitles] = useState();
+  const [about, setAbout] = useState();
   const [loading, setLoading] = useState(false);
-
-  const [newurl, setUrl] = useState(url);
+  const [dogData, setDogData] = useState([]);
+  const [data, setData] = useState()
+  const [newurl, setUrl] = useState();
 
 
   const {auth} = useAuth();
   
 
 useEffect(() => {
-  console.log(breed);
-},[breed]);
+  getDogData();
+},[]);
+
+
+const handleShow = () => {
+  setShow(true);
+  getDogData();
+}
+const getDogData = async () => {
+  try {
+    const response = await axios.get(`/dog/${dogid}`);
+    setDogData([response.data])
+     
+  
+    
+  } catch (err) {
+    console.error(err);
+}
+setData(dogData[0]);
+AddData(data);
+
+
+
+};
+
+const AddData = (info) => {
+  setName(data.name);
+  setBreed(data.breed);
+  setWeight(data.weight);
+  setTitles(data.titles);
+  setAbout(data.about);
+  setUrl(data.PhotoUrl);
+}
 
   const submitHandler = async (e) => {
   e.preventDefault();
@@ -85,19 +116,19 @@ useEffect(() => {
            <Form className = {styles.modalContainer}>
 
               <Form.Group className="mb-3" >
-                <Form.Control type="text" placeholder="Name" onChange = {(e) => setName(e.target.value)} />
+                <Form.Control type="text" placeholder="Name" value = {name}onChange = {(e) => setName(e.target.value)} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="Weight" onChange = {(e) => setWeight(e.target.value)} />
+                <Form.Control type="text" placeholder="Weight"  value = {weight}onChange = {(e) => setWeight(e.target.value)} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="Titles" onChange = {(e) => setTitles(e.target.value)} />
+                <Form.Control type="text" placeholder="Titles" value = {titles} onChange = {(e) => setTitles(e.target.value)} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="textarea" placeholder="About" onChange = {(e) => setAbout(e.target.value)} />
+                <Form.Control type="textarea" placeholder="About" value = {about }onChange = {(e) => setAbout(e.target.value)} />
               </Form.Group>
 
               <GetBreeds breedSetter = {setBreed}/>

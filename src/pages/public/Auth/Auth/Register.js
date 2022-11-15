@@ -6,6 +6,7 @@ import Login from './Login';
 import useAuth from '../../../../hooks/useAuth';
 import SignUpInfo from '../../../private/User/Profile/UserViews/SignUpInfo';
 import styles from './Auth.module.css';
+import SpinnerForUpload from '../../../../components/SpinnerForUpload';
 
 
 
@@ -16,6 +17,7 @@ const Register = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [registerStatus, setRegisterStatus] = useState('false');
+  const [submitValue, setValue] = useState('Submit')
 
   const isMounted = useRef(false);
 
@@ -30,22 +32,31 @@ const Register = () => {
     e.preventDefault();
 
     const registerUser = async () => {
+
+      setValue(<SpinnerForUpload /> )
+
       try {
       const response = await axios.post('/AuthHandler', { 
         Email: userName, 
         Password: password
       });
 
-         setRegisterStatus(response.data.success);
+         if (response.data.success === true) {
          setRegisterInfo(response.data.id)
          isMounted.current = true;
+         }
+         else {
+          alert(response.data.message)
 
-        } catch(err) {
+        } 
+      }
+      catch(err) {
           console.error(err)
         }
         
       }
       registerUser();
+      setValue('Submit');
 
   }
 
@@ -65,7 +76,7 @@ const Register = () => {
       <Form.Control type="password" placeholder="Password" onChange = {(e) => setPassword(e.target.value)}/>
     </Form.Group>
     <Button variant="primary" type="submit" onClick={submitHandler} className = {styles.but}>
-      Submit
+      {submitValue}
     </Button>
     <br />
     <p>Already a Member?</p>

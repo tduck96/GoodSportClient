@@ -61,11 +61,13 @@ function App() {
             <Route path = '/deletepost/:id' element = {<DeletePost />} />
             <Route path = '/post/:id' element = {<Post />} />
             
-            <Route path = '/dog/:id' element = {<Dog/> } />
-            <Route path = '/user/dog/:id' element = {<Dog />} />
-            <Route path = '/dog/editdog/:id' element = {<EditDog />} />
-            <Route path = '/dog/deletedog/:id' element = {<DeleteDog />} />
-            <Route path = '/dog/createdog/' element = {<CreateDog />} />
+           
+              <Route path = '/dog/:id' element = {<Dog/> } />
+              <Route path = '/user/dog/:id' element = {<Dog />} />
+              <Route path = '/dog/editdog/:id' element = {<EditDog />} />
+              <Route path = '/dog/deletedog/:id' element = {<DeleteDog />} />
+              <Route path = '/dog/createdog/' element = {<CreateDog />} />
+            
 
             <Route path = '/handlers/:id' element = {<Handler/> } />
             <Route path = '/clubs/:id' element = {<Club/> } />

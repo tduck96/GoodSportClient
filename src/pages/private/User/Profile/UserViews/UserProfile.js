@@ -66,6 +66,7 @@ const UserProfile = () => {
               id = {info.id}
               url = {info.photoUrl}
               getProfileData = {getProfileData}
+              profileInfo = {profileInfo}
 
               /> 
 
@@ -97,7 +98,7 @@ const UserProfile = () => {
                         <Dropdown.Menu>
 
                          <Dropdown.Item>
-                         <EditDog dogid = {dog.id} url = {dog.photoUrl} getProfileData = {getProfileData}/> 
+                         <EditDog dogid = {dog.id} url = {dog.photoUrl} getProfileData = {getProfileData} dog = {dogInfo}/> 
                          </Dropdown.Item>
 
                           <Dropdown.Item>
