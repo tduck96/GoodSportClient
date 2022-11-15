@@ -36,11 +36,16 @@ const Register = () => {
         Password: password
       });
 
-         setRegisterStatus(response.data.success);
+         if (response.data.success === true) {
          setRegisterInfo(response.data.id)
          isMounted.current = true;
+         }
+         else {
+          alert(response.data.message)
 
-        } catch(err) {
+        } 
+      }
+      catch(err) {
           console.error(err)
         }
         
