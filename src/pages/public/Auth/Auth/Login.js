@@ -32,8 +32,7 @@ const Login = () => {
        console.log(response.data)
 
         if (response.data.success === true)  {
-          navigate('/')  
-          setValue('Submit')
+          navigate('/home')  
          }
         else {
         alert(response.data.message) 
