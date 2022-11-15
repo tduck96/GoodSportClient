@@ -29,21 +29,21 @@ const Login = () => {
           Email: userName, 
           Password: password
         });
+       console.log(response.data)
+
+        if (response.data.success === true)  {
+          navigate('/')  
+          setValue('Submit')
+         }
+        else {
+        alert(response.data.message) 
+        }
 
         setResult(response.data.success);
         setAuth(response.data);
+
        
 
-      if (response.data.success === true)  {
-      
-        navigate('/')  
-        setValue('Submit') 
-      }
-      else {
-
-         alert(response.data.message) 
-      }
-      
       } catch (err) {
           setErrorMsg(err.response.data);
           alert(err.response.data);
@@ -51,7 +51,7 @@ const Login = () => {
   
     setErrorMsg('');
     registerUser();
-    
+   
   }
 }
 
