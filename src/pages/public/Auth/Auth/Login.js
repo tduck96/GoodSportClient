@@ -48,10 +48,12 @@ console.log('clicked')
           alert(err.response.data);
       }      
   
-    setErrorMsg('');
-    registerUser();
+    
    
   }
+  setErrorMsg('');
+    
+    registerUser();
 }
 
   return (
