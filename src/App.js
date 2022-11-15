@@ -32,6 +32,7 @@ import EditPost from './pages/private/User/Profile/UserViews/EditPost';
 import DeletePost from './pages/private/User/Profile/UserViews/DeletePost';
 import DeleteDog from './pages/private/Dogs/DeleteDog';
 import Post from './pages/private/User/Profile/UserViews/Post';
+import { DogProvider } from './context/DogContext';
 
 function App() {
   return (
@@ -58,11 +59,13 @@ function App() {
             <Route path = '/deletepost/:id' element = {<DeletePost />} />
             <Route path = '/post/:id' element = {<Post />} />
             
-            <Route path = '/dog/:id' element = {<Dog/> } />
-            <Route path = '/user/dog/:id' element = {<Dog />} />
-            <Route path = '/dog/editdog/:id' element = {<EditDog />} />
-            <Route path = '/dog/deletedog/:id' element = {<DeleteDog />} />
-            <Route path = '/dog/createdog/' element = {<CreateDog />} />
+           
+              <Route path = '/dog/:id' element = {<Dog/> } />
+              <Route path = '/user/dog/:id' element = {<Dog />} />
+              <Route path = '/dog/editdog/:id' element = {<EditDog />} />
+              <Route path = '/dog/deletedog/:id' element = {<DeleteDog />} />
+              <Route path = '/dog/createdog/' element = {<CreateDog />} />
+            
 
             <Route path = '/handlers/:id' element = {<Handler/> } />
             <Route path = '/clubs/:id' element = {<Club/> } />

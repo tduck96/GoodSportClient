@@ -8,17 +8,17 @@ import { useNavigate } from 'react-router-dom';
 import useAuth from '../../../../../hooks/useAuth';
 import GetLocations from './GetLocations';
 
-const EditProfile = ({url, getProfileData}) => {
+const EditProfile = ({url, getProfileData, profileInfo}) => {
+
+  const data = profileInfo[0];
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const [newurl, setUrl] = useState(url);
-
-  const [name, setName] = useState('');
-  const [bio, setBio] = useState('');
-  const [location, setLocation] = useState('');
+  const [newurl, setUrl] = useState(data.url);
+  const [name, setName] = useState(data.name);
+  const [bio, setBio] = useState(data.bio);
+  const [location, setLocation] = useState(data.location);
   const [loading, setLoading] = useState(false);
 
   const {auth} = useAuth();
@@ -52,7 +52,7 @@ const EditProfile = ({url, getProfileData}) => {
 
   
 
-
+console.log()
 
 
   return (
@@ -81,12 +81,12 @@ const EditProfile = ({url, getProfileData}) => {
            <Form className = {styles.modalContainer}>
 
               <Form.Group className="mb-3" >
-                <Form.Control type="text" placeholder="Name" onChange = {(e) => setName(e.target.value)} />
+                <Form.Control type="text" placeholder="Name" value = {name} onChange = {(e) => setName(e.target.value)} />
               </Form.Group>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="About" onChange = {(e) => setBio(e.target.value)} />
+                <Form.Control type="text" placeholder="About" value = {bio} onChange = {(e) => setBio(e.target.value)} />
               </Form.Group>
 
 

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../../../../hooks/useAuth';
 import axios from '../../../../api/axios';
 import styles from './Auth.module.css';
+import SpinnerForUpload from '../../../../components/SpinnerForUpload';
 
 const Login = () => {
 
@@ -11,12 +12,14 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [result, setResult] = useState('')
+  const [submitValue, setValue] = useState('Submit')
 
   const { setAuth, auth } = useAuth();
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setValue(<SpinnerForUpload />)
 
     const registerUser = async () => {
 
@@ -30,17 +33,15 @@ const Login = () => {
         setAuth(response.data);
        
 
-      if (response.data.success === true) 
+      if (response.data.success === true)  {
       
         navigate('/')   
-      
+        setValue('Submit')
+      }
       else 
 
          alert(response.data.message) 
-        
-
-        
-
+      
       } catch (err) {
           setErrorMsg(err.response.data);
           alert(err.response.data);
@@ -70,7 +71,7 @@ const Login = () => {
       </Form.Group> 
         
       <Button variant="primary" type="submit" onClick = {submitHandler} className = {styles.but}>
-        Submit
+        {submitValue}
       </Button>
       <br/>
       <Link to ='/Register' className = {styles.register}> Register Today</Link>

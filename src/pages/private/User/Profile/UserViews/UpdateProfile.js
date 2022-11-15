@@ -7,14 +7,14 @@ import { Button } from 'react-bootstrap'
 import styles from './SignUpInfo.module.css'
 import { useNavigate } from 'react-router-dom';
 
-const UpdateProfile = () => {
+const UpdateProfile = ({profileInfo}) => {
 
   const [file, setFile] = useState('');
   const [locations, setLocations] = useState([])
   const [location, setLocation] = useState('')
-  const[name, setName ] = useState('');
-  const[bio, setBio] = useState('');
-  const [url, setUrl] = useState('');
+  const[name, setName ] = useState(profileInfo.name);
+  const[bio, setBio] = useState(profileInfo.Bio);
+  const [url, setUrl] = useState(profileInfo.PhotoUrl);
   
   const navigate = useNavigate();
 
@@ -24,6 +24,7 @@ const UpdateProfile = () => {
   
 useEffect(() => {
   getLocations();
+  console.log(profileInfo)
 },[]);
 
   const changeHandler = (e) => {
@@ -76,7 +77,7 @@ useEffect(() => {
        <form>
        <div class="form-group">
          <label for="exampleFormControlInput1">Name</label>
-         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Smith" onChange={(e) => setName(e.target.value)}></input>
+         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Smith" value = {name} onChange={(e) => setName(e.target.value)}></input>
        </div>
        <div class="form-group">
          <label for="exampleFormControlSelect1">Location</label>
