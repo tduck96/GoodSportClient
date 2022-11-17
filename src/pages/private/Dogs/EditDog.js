@@ -99,7 +99,7 @@ const AddData = (info) => {
  onMouseOver={e => e.stopPropagation()}>
 
     <Button variant="primary" onClick={handleShow} >
-        Edit Profile
+        Edit Dog
       </Button>
 
       <Modal show={show} onHide={handleClose}>
