@@ -8,7 +8,6 @@ import { Form } from 'react-bootstrap';
 import PhotoUpload from '../User/Profile/UserViews/PhotoUpload';
 import styles from './Dog.module.css'
 import GetBreeds from './GetBreeds';
-
 import AddDogSport from './AddDogSport';
 import GetAllSports from './GetAllSports';
 
