@@ -5,6 +5,7 @@ import useAuth from '../../../../hooks/useAuth';
 import axios from '../../../../api/axios';
 import styles from './Auth.module.css';
 import SpinnerForUpload from '../../../../components/SpinnerForUpload';
+import { setNestedObjectValues } from 'formik';
 
 const Login = () => {
 
@@ -37,6 +38,7 @@ console.log('clicked')
          }
         else {
         alert(response.data.message) 
+        setValue('Submit')
         }
 
         setResult(response.data.success);
@@ -47,6 +49,7 @@ console.log('clicked')
       } catch (err) {
           setErrorMsg(err.response.data);
           alert(err.response.data);
+          setValue('Submit')
       }      
   
     

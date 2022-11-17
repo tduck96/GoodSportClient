@@ -25,7 +25,7 @@ const EditDog = ({dogid, url, getProfileData, dog}) => {
   const [loading, setLoading] = useState(false);
   const [dogData, setDogData] = useState([]);
   const [data, setData] = useState()
-  const [newurl, setUrl] = useState();
+  const [newurl, setUrl] = useState(url);
 
 
   const {auth} = useAuth();
@@ -44,9 +44,6 @@ const getDogData = async () => {
   try {
     const response = await axios.get(`/dog/${dogid}`);
     setDogData([response.data])
-     
-  
-    
   } catch (err) {
     console.error(err);
 }
@@ -81,12 +78,14 @@ const AddData = (info) => {
         userProfileId: auth.userId
 
       });
-      getProfileData();
+
+      
     }
     catch(err) {
       console.error(err);
     }
     handleClose();
+    getProfileData();
     
 
   }
