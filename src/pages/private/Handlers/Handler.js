@@ -5,6 +5,7 @@ import Locations from '../Filters/Locations';
 import axios from '../../../api/axios';
 import styles from '../User/Profile/UserViews/User.module.css'
 import HandlerSports from './HandlerSports';
+import FollowButton from './FollowButton';
 
 const Handler = () => {
   const { id } = useParams();
@@ -46,6 +47,7 @@ const Handler = () => {
               <h2 className = {styles.profileName}> {info.name} </h2>
               <p className = {styles.info}> {info.bio} </p>
               <p className = {styles.location}>{info.location.name}</p> 
+              <FollowButton />
             </div>
           </ul>
         ))
