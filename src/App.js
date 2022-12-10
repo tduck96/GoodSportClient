@@ -35,12 +35,14 @@ import Post from './pages/private/User/Profile/UserViews/Post';
 import HomeLoggedIn from './pages/private/HomeLoggedIn';
 import Connections from './pages/private/Connections/Connections';
 import ConnectionsLayout from './pages/private/Connections/ConnectionsLayout';
+import ConnectionPosts from './pages/private/ConnectionPosts/ConnectionPosts';
+import PostsLayout from './pages/private/ConnectionPosts/PostsLayout';
 
 function App() {
   return (
     <Routes>
      <Route path = '/' element = {<Layout />} >
-     <Route element ={<PersistLogin />} >
+     
         <Route path = '/' element = {<Home />} />
         <Route path = '/login' element = {<Login />} />
         <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
@@ -49,15 +51,18 @@ function App() {
         <Route path = '/404NotFound' element = {<NotFound />} />
         <Route path = '/createprofile/:id' element = {<SignUpInfo />} />
       
-      
-        <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
-
-             <Route path = '/home' element = {<HomeLoggedIn />}></Route>
+        <Route element ={<PersistLogin />} >
+          <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
+            <Route path = '/home' element = {<HomeLoggedIn />}></Route>
             <Route path = '/user/viewprofile' element = {<UserProfile />} />
             <Route path = '/user/updateprofile/' element = {<UpdateProfile />} />
 
             <Route path = '/connections' element = {<ConnectionsLayout />}>
               <Route path = '/connections/viewall' element = {<Connections />} />
+            </Route>
+
+            <Route path = '/posts' element = {<PostsLayout />} >
+              <Route path = '/posts/viewall' element = {<ConnectionPosts /> } />
             </Route>
             
             <Route path = '/user/addprofilepicture/' element = {<AddProfilePicture />} />
@@ -84,10 +89,7 @@ function App() {
 
           <Route path = '/handlers' element = {<HandlerLayout />}>
             <Route path = '/handlers' element = {<Handlers  />} />
-            
-
-           
-           
+          
           </Route>
 
           <Route path = '/clubs' element = {<ClubLayout />}>

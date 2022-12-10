@@ -1,0 +1,43 @@
+.container {
+    margin-top: 2rem;
+}
+.profileInfo {
+    display: flex;
+}
+.border {
+   width: 100%; 
+   margin-top: 2rem; 
+   border-radius: 1rem;
+   
+}
+.userPhoto {
+    height: 65px;
+    width: 65px;
+    border-radius: 1rem;
+}
+.nameDate {
+    display: flex;  
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.postPhoto {
+    width: 100%;
+      
+}
+.postMinusPhoto {
+    margin: 1rem;
+}
+.name {
+    font-family: 200;
+    margin: 0 .5rem;
+}
+.date {
+    font-size: .7rem;
+    color:gray;
+    font-style: italic;
+}
+.postBody {
+    margin: 1rem 0;
+    font-size: 1rem;
+}
