@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 const FollowButton = () => {
-    const [status, setStatus] = useState(false);
+    const [status, setStatus] = useState();
     const {id} = useParams();
     const {auth} = useAuth();
 
