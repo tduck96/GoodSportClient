@@ -33,6 +33,8 @@ import DeletePost from './pages/private/User/Profile/UserViews/DeletePost';
 import DeleteDog from './pages/private/Dogs/DeleteDog';
 import Post from './pages/private/User/Profile/UserViews/Post';
 import HomeLoggedIn from './pages/private/HomeLoggedIn';
+import Connections from './pages/private/Connections/Connections';
+import ConnectionsLayout from './pages/private/Connections/ConnectionsLayout';
 
 function App() {
   return (
@@ -51,10 +53,13 @@ function App() {
         <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
 
              <Route path = '/home' element = {<HomeLoggedIn />}></Route>
-            
-
             <Route path = '/user/viewprofile' element = {<UserProfile />} />
             <Route path = '/user/updateprofile/' element = {<UpdateProfile />} />
+
+            <Route path = '/connections' element = {<ConnectionsLayout />}>
+              <Route path = '/connections/viewall' element = {<Connections />} />
+            </Route>
+            
             <Route path = '/user/addprofilepicture/' element = {<AddProfilePicture />} />
 
             <Route path = '/editpost/:id' element = {<EditPost  />} />
@@ -79,6 +84,7 @@ function App() {
 
           <Route path = '/handlers' element = {<HandlerLayout />}>
             <Route path = '/handlers' element = {<Handlers  />} />
+            
 
            
            

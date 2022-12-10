@@ -53,6 +53,8 @@ const NavigationBar = () => {
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item><NavLink to ='/user/viewprofile'>View profile</NavLink></Dropdown.Item>
+            <Dropdown.Item><NavLink to ='/connections/viewall'>View Connections</NavLink></Dropdown.Item>
+
             <Dropdown.Item onClick = {onLogout}>Logout</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
