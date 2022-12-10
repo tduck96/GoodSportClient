@@ -40,7 +40,7 @@ function App() {
   return (
     <Routes>
      <Route path = '/' element = {<Layout />} >
-      
+     <Route element ={<PersistLogin />} >
         <Route path = '/' element = {<Home />} />
         <Route path = '/login' element = {<Login />} />
         <Route path = '/user/updateprofile/:id' element = {<UpdateProfile />} />
@@ -49,7 +49,7 @@ function App() {
         <Route path = '/404NotFound' element = {<NotFound />} />
         <Route path = '/createprofile/:id' element = {<SignUpInfo />} />
       
-      <Route element ={<PersistLogin />} >
+      
         <Route element = {<RequireAuth allowedRoles={"handler"}/> } >
 
              <Route path = '/home' element = {<HomeLoggedIn />}></Route>

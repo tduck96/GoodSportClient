@@ -45,7 +45,7 @@ const Connections = () => {
                   <p>{handler.bio}</p>
                 </div>
             </Link>
-            <Button variant = 'primary' size = 'sm'> Message </Button>
+            <Button href = '/404NotFound' variant = 'primary' size = 'sm'>Message</Button>
         </ul>
       ))
     }
