@@ -34,6 +34,7 @@ const FollowButton = () => {
             });
 
             console.log(response.data);
+            console.log(response);
         }
         catch(err) {
             console.error(err);
