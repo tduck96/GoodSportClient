@@ -15,14 +15,12 @@ const Connections = () => {
         getConnections();
     }, []);
 
-    useEffect(() => {
-        console.log(connections);
-    }, [connections]);
+  
 
     const getConnections = async () => {
 
         try {
-            const response = await axios.get(`/user/following/${auth?.id}`);
+            const response = await axios.get(`/user/following/${auth?.userid}`);
             setConnections(response.data);
             console.log(response)
             
