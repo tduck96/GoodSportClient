@@ -13,6 +13,7 @@ const Connections = () => {
 
     useEffect(() => {
         getConnections();
+        console.log(auth);
     }, []);
 
   
