@@ -24,7 +24,7 @@ const Connections = () => {
         try {
             const response = await axios.get(`/user/following/${auth?.id}`);
             setConnections(response.data);
-            console.log(response.data)
+            console.log(response)
             
 
         }
