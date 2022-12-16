@@ -28,7 +28,7 @@ const NavigationBar = () => {
 
         {
           auth?.token ? 
-          <NavLink to ='/home' className = {styles.navLink}>Home</NavLink>
+          <NavLink to ='/posts/viewall' className = {styles.navLink}>Home</NavLink>
           :
           <NavLink to ='/' className = {styles.navLink}>Home</NavLink>
         } 
