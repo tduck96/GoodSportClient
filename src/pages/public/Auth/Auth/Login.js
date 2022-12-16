@@ -19,7 +19,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
-console.log('clicked')
+    console.log('clicked')
     e.preventDefault();
     setValue(<SpinnerForUpload />)
 
@@ -33,7 +33,7 @@ console.log('clicked')
        console.log(response.data)
 
         if (response.data.success === true)  {
-          navigate('/home')  
+          navigate('posts/viewall')  
           setValue('Submit')
          }
         else {
