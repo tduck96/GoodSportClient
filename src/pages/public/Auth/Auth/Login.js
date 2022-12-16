@@ -33,7 +33,7 @@ const Login = () => {
        console.log(response.data)
 
         if (response.data.success === true)  {
-          navigate('posts/viewall')  
+          navigate('/posts/viewall')  
           setValue('Submit')
          }
         else {
